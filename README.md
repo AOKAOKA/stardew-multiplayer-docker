@@ -142,7 +142,7 @@ docker-compose up
 
 ## Game Setup
 
-Intially, you have to create or load a game once via VNC or web interface. After that, the Autoload Mod jumps into the previously loaded game save everytime you restart or rebuild the container. The AutoLoad Mod config file is by default mounted as a volume, since it keeps the state of the ongoing game save, but you can also copy your existing game save to the `Saves` volume and define the game save's name in the environment variables.
+Intially, you have to create or load a game once via VNC or web interface. After that, the Autoload Mod jumps into the previously loaded game save everytime you restart or rebuild the container. The AutoLoad Mod config file is by default mounted as a volume, since it keeps the state of the ongoing game save, but you can also copy your existing game save to the `Saves` volume and define the game save's name in the environment variables. Once started, press the Always On Hotkey (default F9) to enter server mode. 
 
 ### VNC
 
@@ -186,6 +186,10 @@ Invite Code Bot: ﻿The server will copy the invite code to an "InviteCode.txt" 
 - [TimeSpeed](https://www.nexusmods.com/stardewvalley/mods/169) (Default: Off)
 
 ## Troubleshooting
+
+### Waiting for Day to End
+
+Check VNC just to make sure the host hasn't gotten stuck on a prompt. 
 
 ### Error Messages in Console
 
