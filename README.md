@@ -18,9 +18,11 @@ they set.
 
 ```
 environment:
-      - "VNC_PASSWORD=insecure"
-      - "DISPLAY_HEIGHT=900"
-      - "DISPLAY_WIDTH=1200"
+      ## VNC
+      - VNC_PASSWORD=insecure
+      - DISPLAY_HEIGHT=900
+      - DISPLAY_WIDTH=1200
+      
       ## Always On Server mod
       # Removing this will probably defeat the point of ever using this?
       - ENABLE_ALWAYSONSERVER_MOD=${ENABLE_ALWAYSONSERVER_MOD-true}
