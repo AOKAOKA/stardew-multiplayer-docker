@@ -1,5 +1,5 @@
 # Pull base image.
-FROM jlesage/baseimage-gui:debian-10
+FROM jlesage/baseimage-gui:debian-11-v4
 
 # Set the name of the application.
 ENV APP_NAME="StardewValley"
@@ -16,16 +16,15 @@ RUN mkdir -p /data/Stardew && \
     tar xf /data/latest.tar.gz -C /data/Stardew && \
     rm /data/latest.tar.gz 
 
-RUN wget -qO dotnet.tar.gz https://download.visualstudio.microsoft.com/download/pr/6788a5a5-1879-4095-948d-72c7fbdf350f/c996151548ec9f24d553817db64c3577/dotnet-sdk-5.0.402-linux-x64.tar.gz \
-#RUN wget -qO dotnet.tar.gz https://download.visualstudio.microsoft.com/download/pr/95352809-7f41-40f3-974d-8d530321a8e4/0024d7bf0c872f176ceba7a63a34915b/dotnet-runtime-6.0.0-linux-musl-x64.tar.gz \
-    && tar -zxf dotnet.tar.gz -C /usr/share/dotnet \
-    && rm dotnet.tar.gz \
-    && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet 
+RUN wget -qO dotnet.tar.gz https://download.visualstudio.microsoft.com/download/pr/d4b71fac-a2fd-4516-ac58-100fb09d796a/e79d6c2a8040b59bf49c0d167ae70a7b/dotnet-sdk-5.0.408-linux-arm64.tar.gz &&\
+     tar -zxf dotnet.tar.gz -C /usr/share/dotnet &&\
+     rm dotnet.tar.gz &&\
+     ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet 
 
 RUN wget https://mirror.cloudcraft.info/SMAPI_latest.zip -qO /data/nexus.zip && \
     unzip /data/nexus.zip -d /data/nexus/ && \
-    /bin/bash -c "SMAPI_NO_TERMINAL=true SMAPI_USE_CURRENT_SHELL=true echo -e \"2\n\n\" | /data/nexus/SMAPI\ 4.0.1\ installer/internal/linux/SMAPI.Installer --install --game-path \"/data/Stardew/game\"" || :
-
+    SMAPI_INSTALLER=$(find /data/nexus -name 'SMAPI*.installer' -type f | head -n 1) && \
+    /bin/bash -c "SMAPI_NO_TERMINAL=true SMAPI_USE_CURRENT_SHELL=true echo -e "2\n\n" | $SMAPI_INSTALLER --install --game-path "/data/Stardew/game"" || :
 
 # Add Mods & Scripts
 COPY ["mods/", "/data/Stardew/game/Mods/"]
