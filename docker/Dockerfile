@@ -1,13 +1,10 @@
 # Pull base image.
-FROM jlesage/baseimage-gui:debian-11-v4
+FROM jlesage/baseimage-gui:debian-11
 
 # Set the name of the application.
 ENV APP_NAME="StardewValley"
 
-RUN apt-get update
-RUN apt-get install -y wget unzip tar strace mono-complete xterm gettext-base jq netcat procps 
-RUN APP_ICON_URL=https://stardewcommunitywiki.com/mediawiki/images/4/48/Fiddlehead_Fern.png && \
-    install_app_icon.sh "$APP_ICON_URL"
+RUN apt-get update && apt-get install -y wget unzip tar strace mono-complete xterm gettext-base jq netcat procps && apt-get clean
 
 # Game + ModLoader 1.6.2 4.0.1
 RUN mkdir -p /data/Stardew && \
@@ -23,8 +20,8 @@ RUN wget -qO dotnet.tar.gz https://download.visualstudio.microsoft.com/download/
 
 RUN wget https://mirror.cloudcraft.info/SMAPI_latest.zip -qO /data/nexus.zip && \
     unzip /data/nexus.zip -d /data/nexus/ && \
-    SMAPI_INSTALLER=$(find /data/nexus -name 'SMAPI*.installer' -type f | head -n 1) && \
-    /bin/bash -c "SMAPI_NO_TERMINAL=true SMAPI_USE_CURRENT_SHELL=true echo -e "2\n\n" | $SMAPI_INSTALLER --install --game-path "/data/Stardew/game"" || :
+    SMAPI_INSTALLER=$(find /data/nexus -name 'SMAPI*.*Installer' -type f -path "*/SMAPI * installer/internal/linux/*" | head -n 1) && \
+    /bin/bash -c "SMAPI_NO_TERMINAL=true SMAPI_USE_CURRENT_SHELL=true echo -e '2\n\n' | \"$SMAPI_INSTALLER\" --install --game-path '/data/Stardew/game'" || :
 
 # Add Mods & Scripts
 COPY ["mods/", "/data/Stardew/game/Mods/"]
