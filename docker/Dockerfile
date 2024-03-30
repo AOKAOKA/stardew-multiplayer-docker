@@ -19,7 +19,7 @@ RUN mkdir -p /data/Stardew && \
 RUN wget -qO dotnet.tar.gz https://download.visualstudio.microsoft.com/download/pr/d4b71fac-a2fd-4516-ac58-100fb09d796a/e79d6c2a8040b59bf49c0d167ae70a7b/dotnet-sdk-5.0.408-linux-arm64.tar.gz &&\
      tar -zxf dotnet.tar.gz -C /usr/share/dotnet &&\
      rm dotnet.tar.gz &&\
-     ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet 
+     ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
 
 RUN wget https://mirror.cloudcraft.info/SMAPI_latest.zip -qO /data/nexus.zip && \
     unzip /data/nexus.zip -d /data/nexus/ && \

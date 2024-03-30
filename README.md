@@ -63,13 +63,6 @@ environment:
       - AUTO_LOAD_GAME_FORGET_LAST_FILE_ON_TITLE=${AUTO_LOAD_GAME_FORGET_LAST_FILE_ON_TITLE-true}
       - AUTO_LOAD_GAME_LOAD_INTO_MULTIPLAYER=${AUTO_LOAD_GAME_LOAD_INTO_MULTIPLAYER-true}
 
-      ## Remote Control mod
-      # Disabling this will remove the ability to automatically sleep and save on shutdown
-      - ENABLE_REMOTECONTROL_MOD=${ENABLE_REMOTECONTROL_MOD-true}
-      - REMOTE_CONTROL_EVERYONE_IS_ADMIN=${REMOTE_CONTROL_EVERYONE_IS_ADMIN-true}    # Disable any authorization by just making everyone an admin - useful for private servers where everyone is trusted
-      - REMOTE_CONTROL_DEFAULT_ADMINS=${REMOTE_CONTROL_DEFAULT_ADMINS-}   # A list of comma-separated json objects to use as default admins, eg: {id: "123456789", name: "Seb"}, {id: "987654321", name: "Kitz"}
-      - REMOTE_CONTROL_SHOULD_ASSIGN_ADMIN_TO_FIRST_CABIN_FARMER=${REMOTE_CONTROL_SHOULD_ASSIGN_ADMIN_TO_FIRST_CABIN_FARMER-true}   # Give the first player that connects admin privileges
-
       ## Save Backup mod
       # Disabling this will stop saves being backed up
       - ENABLE_SAVEBACKUP_MOD=${ENABLE_SAVEBACKUP_MOD-true}
