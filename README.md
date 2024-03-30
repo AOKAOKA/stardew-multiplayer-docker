@@ -4,12 +4,20 @@ This project aims to autostart a Stardew Valley Multiplayer Server as easy as po
 
 ## Notes
 
-- Updating to most recent version requires a rebuild: `docker-compose build --no-cache`
+- Updating to most recent version requires a rebuild: `git pull` and `docker-compose build --no-cache`
 - Although I'm trying to put out updates, I don't have the time for testing thoroughly, so if you find issues, including
   game updates, please put in an issue request and I will try to help.
 - Thanks printfuck for the base code and baolatui for helping with hosting files.
 
 ## Setup
+
+### Docker-Compose
+
+```
+git clone https://github.com/norimicry/stardew-multiplayer-docker.git
+
+docker-compose up
+```
 
 ### Configuration
 
@@ -18,13 +26,13 @@ they set.
 
 ```
 environment:
-      ## VNC
+      # VNC
       - VNC_PASSWORD=insecure
       - DISPLAY_HEIGHT=900
       - DISPLAY_WIDTH=1200
       
-      ## Always On Server mod
-      # Removing this will probably defeat the point of ever using this?
+      # Always On Server mod
+      ## Removing this will probably defeat the point of ever using this?
       - ENABLE_ALWAYSONSERVER_MOD=${ENABLE_ALWAYSONSERVER_MOD-true}
       - ALWAYS_ON_SERVER_HOTKEY=${ALWAYS_ON_SERVER_HOTKEY-F9}
       - ALWAYS_ON_SERVER_PROFIT_MARGIN=${ALWAYS_ON_SERVER_PROFIT_MARGIN-100}
@@ -56,35 +64,35 @@ environment:
       - ALWAYS_ON_SERVER_DANCE_OF_JELLIES_TIMEOUT=${ALWAYS_ON_SERVER_DANCE_OF_JELLIES_TIMEOUT-120}
       - ALWAYS_ON_SERVER_FESTIVAL_OF_ICE_TIMEOUT=${ALWAYS_ON_SERVER_FESTIVAL_OF_ICE_TIMEOUT-120 }
 
-      ## Auto Load Game mod
-      # Removing this will mean you need to VNC in to manually start the game each boot
+      # Auto Load Game mod
+      ## Removing this will mean you need to VNC in to manually start the game each boot
       - ENABLE_AUTOLOADGAME_MOD=${ENABLE_AUTOLOADGAME-null}
       - AUTO_LOAD_GAME_LAST_FILE_LOADED=${AUTO_LOAD_GAME_LAST_FILE_LOADED-null}
       - AUTO_LOAD_GAME_FORGET_LAST_FILE_ON_TITLE=${AUTO_LOAD_GAME_FORGET_LAST_FILE_ON_TITLE-true}
       - AUTO_LOAD_GAME_LOAD_INTO_MULTIPLAYER=${AUTO_LOAD_GAME_LOAD_INTO_MULTIPLAYER-true}
 
-      ## Save Backup mod
-      # Disabling this will stop saves being backed up
+      # Save Backup mod
+      ## Disabling this will stop saves being backed up
       - ENABLE_SAVEBACKUP_MOD=${ENABLE_SAVEBACKUP_MOD-true}
 
-      ## Chat Commands mod
+      # Chat Commands mod
       - ENABLE_CHATCOMMANDS_MOD=${ENABLE_CHATCOMMANDS_MOD-false}
 
-      ## Console Commands mod
+      # Console Commands mod
       - ENABLE_CONSOLECOMMANDS_MOD=${ENABLE_CONSOLECOMMANDS_MOD-false}
 
-      ## Time Speed mod
+      # Time Speed mod
       - ENABLE_TIMESPEED_MOD=${ENABLE_TIMESPEED_MOD-false}
 
-      # Days are only 20 hours long
-      #   7.0 = 14 mins per in game day (default)
-      #  10.0 = 20 mins
-      #  15.0 = 30 mins
-      #  20.0 = 40 mins
-      #  30.0 = 1 hour
-      # 120.0 = 4 hours
-      # 300.0 = 10 hours
-      # 600.0 = 20 hours (realtime)
+      ## Days are only 20 hours long
+      ##   7.0 = 14 mins per in game day (default)
+      ##  10.0 = 20 mins
+      ##  15.0 = 30 mins
+      ##  20.0 = 40 mins
+      ##  30.0 = 1 hour
+      ## 120.0 = 4 hours
+      ## 300.0 = 10 hours
+      ## 600.0 = 20 hours (realtime)
 
       - TIME_SPEED_DEFAULT_TICK_LENGTH=${TIME_SPEED_DEFAULT_TICK_LENGTH-7.0}
       - TIME_SPEED_TICK_LENGTH_BY_LOCATION_INDOORS=${TIME_SPEED_TICK_LENGTH_BY_LOCATION_INDOORS-7.0}
@@ -100,7 +108,7 @@ environment:
       - TIME_SPEED_KEYS_DECREASE_TICK_INTERVAL=${TIME_SPEED_KEYS_DECREASE_TICK_INTERVAL-OemComma}
       - TIME_SPEED_KEYS_RELOAD_CONFIG=${TIME_SPEED_KEYS_RELOAD_CONFIG-B}
 
-      ## Crops Anytime Anywhere mod
+      # Crops Anytime Anywhere mod
       - ENABLE_CROPSANYTIMEANYWHERE_MOD=${ENABLE_CROPSANYTIMEANYWHERE_MOD-false}
 
       - CROPS_ANYTIME_ANYWHERE_ENABLE_IN_SEASONS_SPRING=${CROPS_ANYTIME_ANYWHERE_ENABLE_IN_SEASONS_SPRING-true}
@@ -115,7 +123,7 @@ environment:
       - CROPS_ANYTIME_ANYWHERE_FORCE_TILLABLE_STONE=${CROPS_ANYTIME_ANYWHERE_FORCE_TILLABLE_STONE-false}
       - CROPS_ANYTIME_ANYWHERE_FORCE_TILLABLE_OTHER=${CROPS_ANYTIME_ANYWHERE_FORCE_TILLABLE_OTHER-false}
 
-      ## Friends Forever mod
+      # Friends Forever mod
       - ENABLE_FRIENDSFOREVER_MOD=${ENABLE_FRIENDSFOREVER_MOD-false}
 
       - FRIENDS_FOREVER_AFFECT_SPOUSE=${FRIENDS_FOREVER_AFFECT_SPOUSE-false}
@@ -123,24 +131,16 @@ environment:
       - FRIENDS_FOREVER_AFFECT_EVERYONE_ELSE=${FRIENDS_FOREVER_AFFECT_EVERYONE_ELSE-true}
       - FRIENDS_FOREVER_AFFECT_ANIMALS=${FRIENDS_FOREVER_AFFECT_ANIMALS-true}
 
-      ## No Fence Decay mod
+      # No Fence Decay mod
       - ENABLE_NOFENCEDECAY_MOD=${ENABLE_NOFENCEDECAY_MOD-false}
 
-      ## Non-destructive NPCs mod
+      # Non-destructive NPCs mod
       - ENABLE_NONDESTRUCTIVENPCS_MOD=${ENABLE_NONDESTRUCTIVENPCS_MOD-false}
-```
-
-### Docker-Compose
-
-```
-git clone https://github.com/norimicry/stardew-multiplayer-docker.git
-
-docker-compose up
 ```
 
 ## Game Setup
 
-Intially, you have to create or load a game once via VNC or web interface. After that, the Autoload Mod jumps into the
+Initially, you have to create or load a game once via VNC or web interface. After that, the Autoload Mod jumps into the
 previously loaded game save everytime you restart or rebuild the container. The AutoLoad Mod config file is by default
 mounted as a volume, since it keeps the state of the ongoing game save, but you can also copy your existing game save to
 the `Saves` volume and define the game save's name in the environment variables. Once started, press the Always On
@@ -154,9 +154,9 @@ can modify the VNC Port and IP address and Password in the `docker-compose.yml` 
 Localhost:
 
 ```
-   # Server is only reachable on localhost on port 2342...
+   # Server is only reachable on localhost on port 5902...
    ports:
-     - 127.0.0.1:2342:5900
+     - 127.0.0.1:5902:5900
    # ... with the password "insecure"
    environment:
      - VNCPASS=insecure
@@ -164,7 +164,7 @@ Localhost:
 
 ### Web Interface
 
-On port 5900 (mapped to 5902 by default) inside the container is a web interface. This is a bit easier and more
+On port 5800 (mapped to 5801 by default) inside the container is a web interface. This is a bit easier and more
 accessible than just the VNC interface. Although you will be asked for the vnc password, I wouldn't recommend exposing
 the port to the outside world.
 
