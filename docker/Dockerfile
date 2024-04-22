@@ -18,8 +18,8 @@ RUN wget -qO dotnet.tar.gz https://download.visualstudio.microsoft.com/download/
      rm dotnet.tar.gz &&\
      ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
 
-RUN wget --user-agent="Mozilla" https://mirror.cloudcraft.info/SMAPI_latest.zip -qO /data/nexus.zip && \
-    unzip /data/nexus.zip -d /data/nexus/ && \
+RUN wget --user-agent="Mozilla" https://mirror.cloudcraft.info/SMAPI_latest.tar.gz -qO /data/nexus.zip && \
+    tar xf /data/nexus.tar.gz -C /data/nexus && \
     SMAPI_INSTALLER=$(find /data/nexus -name 'SMAPI*.*Installer' -type f -path "*/SMAPI * installer/internal/linux/*" | head -n 1) && \
     /bin/bash -c "SMAPI_NO_TERMINAL=true SMAPI_USE_CURRENT_SHELL=true echo -e '2\n\n' | \"$SMAPI_INSTALLER\" --install --game-path '/data/Stardew/game'" || :
 
