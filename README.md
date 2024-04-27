@@ -1,6 +1,12 @@
 # Stardew Valley Multiplayer Docker Compose
 
-This project aims to autostart a Stardew Valley Multiplayer Server as easy as possible. Updated for 1.6!
+Update: Previous versions provided game files to create the server with the Docker container. To respect ConcernedApe's work and follow 
+intellectual property law, this will no longer be the case. Users will still be allowed to use their own copy of the game, however. For now,
+I will simply be disabling the sharing of game files which will render the Dockerfile incomplete. Those with more advanced Docker
+knowledge will be able to make alterations. Life is busy so I appreciate patience while I work to update instructions on how to use
+your own game files. I welcome pull requests to aid in this effort. 
+
+This project aims to autostart a Stardew Valley Multiplayer Server as easy as possible.
 
 ## Notes
 
