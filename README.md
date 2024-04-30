@@ -195,6 +195,38 @@ for more info.)
 - [Remote Control](https://github.com/Novex/stardew-remote-control) (Default: On)
 - [TimeSpeed](https://www.nexusmods.com/stardewvalley/mods/169) (Default: Off)
 
+
+## Steam Setup
+
+This image will download the game from Steam server using [steamcmd](https://developer.valvesoftware.com/wiki/SteamCMD) if you own the game, for that it requires your steam login.
+
+The credential variables are required only during building, not during game run.
+
+```
+## Setup those variable only during the first build or updates
+export STEAM_USER=<steamUsername>
+export STEAM_PASS=<steamPassword>
+export STEAM_GUARD=<lastesSteamGuardCode> # If you account is not protected don't set
+
+docker-compose -f docker-compose-steam.yml up
+```
+
+### Steam Guard
+
+If your account is protected by steam Guard the build is a little time sensitive. You must open your app and
+export the current Steam Guard to `STEAM_GUARD` environment variable code right before building. 
+
+**Note: the code lasts a little longer than shown but not much.**
+
+After start building pay attention to your app, even with the code it will request for authorization, which must be granted.
+
+If the build fails or when you want to update with `docker-compose build --no-cache` you should set the newers `STEAM_GUARD` again.
+
+```
+## Remove env variables after build
+unset STEAM_USER STEAM_PASS STEAM_GUARD
+```
+
 ## Troubleshooting
 
 ### Waiting for Day to End
