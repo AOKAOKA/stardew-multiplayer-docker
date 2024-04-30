@@ -4,7 +4,6 @@ FROM jlesage/baseimage-gui:debian-11
 ARG STEAM_USER
 ARG STEAM_PASS
 ARG SRCDS_APPID # Steam appId
-ARG STEAM_GUARD
 
 # Set the name of the application.
 ENV APP_NAME="StardewValley"
@@ -24,6 +23,10 @@ RUN mkdir -p /data/Stardew && \
 RUN wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz -qO steamcmd.tar.gz && \
     tar -xzvf steamcmd.tar.gz -C /data/steamcmd && \
     cd /data/steamcmd
+
+## Don't set the arg earlier, if you need to rebuild the container
+## it will cache up to here when you change the ENV VAR
+ARG STEAM_GUARD
 
 RUN chown -R 1000:1000 /data && \
     export HOME=/data && \
