@@ -8,14 +8,14 @@ ARG SRCDS_APPID # Steam appId
 # Set the name of the application.
 ENV APP_NAME="StardewValley"
 ## Uses a distinct PATH from Stardew/game/ that GOG has.
-ENV GAME_PATH="/data/Stardew/"
+ENV GAME_PATH="/data/Stardew/game"
 
 ## lib32gcc-s1 is required for steamcmd
 RUN apt-get update && apt-get install -y wget unzip tar strace mono-complete xterm gettext-base jq netcat procps lib32gcc-s1 && apt-get clean
 
 # Game + ModLoader 1.6.2 4.0.1
 
-RUN mkdir -p /data/Stardew && \
+RUN mkdir -p ${GAME_PATH} && \
     mkdir -p /data/nexus && \
     mkdir -p /data/steamcmd
 
@@ -30,7 +30,7 @@ ARG STEAM_GUARD
 
 RUN chown -R 1000:1000 /data && \
     export HOME=/data && \
-    /data/steamcmd/steamcmd.sh +force_install_dir /data/Stardew +login ${STEAM_USER} ${STEAM_PASS} ${STEAM_GUARD} +app_update ${SRCDS_APPID} validate +quit
+    /data/steamcmd/steamcmd.sh +force_install_dir ${GAME_PATH} +login ${STEAM_USER} ${STEAM_PASS} ${STEAM_GUARD} +app_update ${SRCDS_APPID} validate +quit
 
 RUN mkdir -p /data/.steam/sdk32 && \
     cp -v /data/steamcmd/linux32/steamclient.so /data/.steam/sdk32/steamclient.so && \
