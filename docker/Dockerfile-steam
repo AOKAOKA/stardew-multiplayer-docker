@@ -61,5 +61,7 @@ RUN mkdir /etc/services.d/utils && touch /etc/services.d/app/utils.dep
 COPY run /etc/services.d/utils/run 
 RUN chmod +x /etc/services.d/utils/run 
 
+COPY start.sh $GAME_PATH/start.sh
+RUN chmod +x $GAME_PATH/start.sh
 COPY docker-entrypoint.sh /startapp.sh
 RUN chmod +x /startapp.sh
