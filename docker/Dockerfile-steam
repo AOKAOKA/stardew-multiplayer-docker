@@ -63,5 +63,5 @@ RUN chmod +x /etc/services.d/utils/run
 
 COPY start.sh $GAME_PATH/start.sh
 RUN chmod +x $GAME_PATH/start.sh
-COPY docker-entrypoint.sh /startapp.sh
+COPY docker-entrypoint-steam.sh /startapp.sh
 RUN chmod +x /startapp.sh
