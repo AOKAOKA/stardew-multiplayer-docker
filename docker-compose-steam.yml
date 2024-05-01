@@ -6,10 +6,14 @@ services:
       context: docker
       dockerfile: Dockerfile-steam
       args:
-        STEAM_USER: ${STEAM_USER}   ## Recommended: set as env_variable during build
-        STEAM_PASS: ${STEAM_PASS}   ## Recommended: set as env_variable during build
-        STEAM_GUARD: ${STEAM_GUARD} ## Recommended: set as env_variable during build
-        SRCDS_APPID: 413150         ## Stardew steamId
+        ## Recommended: set as env_variable during build
+        STEAM_USER: ${STEAM_USER}
+        ## Recommended: set as env_variable during build
+        STEAM_PASS: ${STEAM_PASS}
+        ## Recommended: set as env_variable during build
+        STEAM_GUARD: ${STEAM_GUARD}
+        ## Stardew steamId
+        SRCDS_APPID: 413150
     container_name: stardew
     environment:
       # VNC

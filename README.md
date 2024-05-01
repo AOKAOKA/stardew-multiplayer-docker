@@ -1,22 +1,57 @@
 # Stardew Valley Multiplayer Docker Compose
 
-Update: Previous versions provided game files to create the server with the Docker container. To respect ConcernedApe's work and follow 
-intellectual property law, this will no longer be the case. Users will still be allowed to use their own copy of the game, however. For now,
-I will simply be disabling the sharing of game files which will render the Dockerfile incomplete. Those with more advanced Docker
-knowledge will be able to make alterations. Life is busy so I appreciate patience while I work to update instructions on how to use
-your own game files. I welcome pull requests to aid in this effort. See Steam Setup section for running through Steam.
-
 This project aims to autostart a Stardew Valley Multiplayer Server as easy as possible.
 
 ## Notes
 
-- Although I'm trying to put out updates, I don't have the time for testing thoroughly, so if you find issues, including
-  game updates, please put in an issue request and I will try to help.
-- Thanks printfuck for the base code and baolatui for helping with hosting files.
+- Previous versions provided game files to create the server with the Docker container. To respect ConcernedApe's work and follow
+intellectual property law, this will no longer be the case. Users will now be required to use their own copy of the game.
+- Although I'm trying to put out updates, I don't have the time for testing thoroughly, so if you find issues, please put 
+in an issue request and I will try to help.
+- Thanks printfuck for the base code.
 
-<a href="https://www.buymeacoffee.com/norimicry" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+<a href="https://www.buymeacoffee.com/norimicry" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
 
 ## Setup
+
+### Steam
+
+This image will download the game from Steam server using [steamcmd](https://developer.valvesoftware.com/wiki/SteamCMD) if you own the game. For that, it requires your Steam login.
+
+The credential variables are required only during building, not during game runtime.
+
+```
+## Set these variables only during the first build or during updates
+export STEAM_USER=<steamUsername>
+export STEAM_PASS=<steamPassword>
+export STEAM_GUARD=<lastesSteamGuardCode> # If you account is not protected, don't set
+
+docker compose -f docker-compose-steam.yml up
+```
+
+#### Steam Guard
+
+If your account is protected by Steam Guard, the build is a little time sensitive. You must open your app and
+export the current Steam Guard to `STEAM_GUARD` environment variable code right before building.
+
+**Note: the code lasts a little longer than shown but not much.**
+
+After starting build, pay attention to your app. Even with the code, it will request for authorization which must be granted.
+
+If the build fails or when you want to update with `docker compose -f docker-compose-steam.yml build --no-cache`, you should set the newer `STEAM_GUARD` again.
+
+```
+## Remove env variables after build
+unset STEAM_USER STEAM_PASS STEAM_GUARD
+```
+### GOG
+
+To my knowledge there is no way to automate this. To use game files from GOG, you will need to download the Linux installer. 
+Sign in, go to Games, find Stardew, change the system to Linux, and download the game installer. The file will look something 
+like `stardew_valley_x.x.x.xxx.sh`. Unzip this file (using Git Bash if you are on Windows), and copy the files within the 
+`data/noarch/` directory to `docker/game_data/`. Start the container using `docker compose -f docker-compose-gog.yml up`. To 
+rebuild the container after updating the files, use `docker compose -f docker-compose-gog.yml build --no-cache`.
 
 ### Configuration
 
@@ -172,7 +207,7 @@ the port to the outside world.
 ## Accessing the server
 
 - Direct IP: You will need to set a up direct IP access over the internet "Join LAN Game" by opening (or forwarding)
-  port 24642. Or use Server Port Changer to choose a different port. People can then "Join LAN Game" via your external IP.
+  port 24642. Feel free to change this mapping in the compose file. People can then "Join LAN Game" via your external IP.
 
 (Taken from mod description. See [Always On Server](https://www.nexusmods.com/stardewvalley/mods/2677?tab=description)
 for more info.)
@@ -188,38 +223,6 @@ for more info.)
 - [Remote Control](https://github.com/Novex/stardew-remote-control) (Default: On)
 - [TimeSpeed](https://www.nexusmods.com/stardewvalley/mods/169) (Default: Off)
 
-
-## Steam Setup
-
-This image will download the game from Steam server using [steamcmd](https://developer.valvesoftware.com/wiki/SteamCMD) if you own the game, for that it requires your steam login.
-
-The credential variables are required only during building, not during game run.
-
-```
-## Setup those variable only during the first build or updates
-export STEAM_USER=<steamUsername>
-export STEAM_PASS=<steamPassword>
-export STEAM_GUARD=<lastesSteamGuardCode> # If you account is not protected don't set
-
-docker-compose -f docker-compose-steam.yml up
-```
-
-### Steam Guard
-
-If your account is protected by steam Guard the build is a little time sensitive. You must open your app and
-export the current Steam Guard to `STEAM_GUARD` environment variable code right before building. 
-
-**Note: the code lasts a little longer than shown but not much.**
-
-After start building pay attention to your app, even with the code it will request for authorization, which must be granted.
-
-If the build fails or when you want to update with `docker-compose build --no-cache` you should set the newers `STEAM_GUARD` again.
-
-```
-## Remove env variables after build
-unset STEAM_USER STEAM_PASS STEAM_GUARD
-```
-
 ## Troubleshooting
 
 ### Waiting for Day to End
@@ -233,16 +236,5 @@ for messages like "cannot open display", which would most likely indicate permis
 
 ### VNC
 
-Access the game via VNC to initially load or start a pre-generated savegame. You can control the server from there or
+Access the game via VNC to initially load or start a pre-generated game save. You can control the server from there or
 edit the config.json files in the configs folder.
-
-## Disclaimer
-
-This multiplayer server container is designed to distribute game files for the purpose of facilitating multiplayer
-gaming experiences. By utilizing this server container, you acknowledge and agree that you are expected to possess a
-legal copy of the game for which the files are being distributed. These files are intended solely for the purpose of
-running a multiplayer server and should not be used in any other manner. The distributed game files are to be strictly
-used for the operation of multiplayer servers. Any other use, including but not limited to reproduction, modification,
-or distribution for personal or commercial gain, is strictly prohibited. The distribution of these game files does not
-imply endorsement or sponsorship by the creators or owners of the game. We are solely providing a platform for
-multiplayer gaming experiences.
