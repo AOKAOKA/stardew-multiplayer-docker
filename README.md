@@ -14,6 +14,8 @@ This project aims to autostart a Stardew Valley Multiplayer Server as easy as po
   game updates, please put in an issue request and I will try to help.
 - Thanks printfuck for the base code and baolatui for helping with hosting files.
 
+<a href="https://www.buymeacoffee.com/norimicry" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
 ## Setup
 
 ### Configuration
