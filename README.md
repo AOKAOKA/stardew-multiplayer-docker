@@ -109,10 +109,6 @@ environment:
       - ENABLE_UNLIMITEDPLAYERS_MOD=${ENABLE_UNLIMITEDPLAYERS-true}
       - UNLIMITED_PLAYERS_PLAYER_LIMIT=${UNLIMITED_PLAYERS_PLAYER_LIMIT-8}
 
-      # Save Backup mod
-      ## Disabling this will stop saves being backed up
-      - ENABLE_SAVEBACKUP_MOD=${ENABLE_SAVEBACKUP_MOD-true}
-
       # Chat Commands mod
       - ENABLE_CHATCOMMANDS_MOD=${ENABLE_CHATCOMMANDS_MOD-false}
 
