@@ -1,10 +1,10 @@
 {
-  "Name": "Stardew Multiplayer Server",
-  "Author": "funny-snek & Zuberii & moy",
-  "Version": "1.6.0",
+  "Name": "Always On Server",
+  "Author": "funny-snek & Zuberii",
+  "Version": "1.20.3-unofficial.2-mikkoperkele",
   "Description": "A Headless server mod.",
-  "UniqueID": "moy.Always_On_Server",
-  "EntryDll": "Stardew-Multiplayer-Server.dll",
-  "MinimumApiVersion": "4.0",
-  "UpdateKeys": [ "" ]
+  "UniqueID": "mikko.Always_On_Server",
+  "EntryDll": "Always On Server.dll",
+  "MinimumApiVersion": "4.0.0",
+  "UpdateKeys": [ "Nexus:2677" ]
 }
