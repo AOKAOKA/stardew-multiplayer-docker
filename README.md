@@ -222,6 +222,7 @@ for more info.)
 - [Non Destructive NPCs](https://www.nexusmods.com/stardewvalley/mods/5176) (Default: Off)
 - [Remote Control](https://github.com/Novex/stardew-remote-control) (Default: On)
 - [TimeSpeed](https://www.nexusmods.com/stardewvalley/mods/169) (Default: Off)
+- [Unlimited Players](https://www.nexusmods.com/stardewvalley/mods/2213) (Default: On)
 
 ## Troubleshooting
 
