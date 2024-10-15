@@ -7,7 +7,7 @@ ENV APP_NAME="StardewValley"
 # Uses a distinct PATH from Stardew/game/ that GOG has.
 ENV GAME_PATH="/data/Stardew"
 
-RUN apt-get update && apt-get install -y wget unzip tar strace mono-complete xterm gettext-base jq netcat procps && apt-get clean
+RUN apt-get update && apt-get install -y wget unzip tar strace mono-complete xterm gettext-base jq netcat procps locales && apt-get clean
 
 RUN mkdir -p ${GAME_PATH} && \
     mkdir -p /data/nexus
