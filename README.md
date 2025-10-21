@@ -1,241 +1,204 @@
-# Stardew Valley Multiplayer Docker Compose
+# Stardew Valley 多人联机 Docker Compose 项目
 
-This project aims to autostart a Stardew Valley Multiplayer Server as easy as possible.
+这个项目旨在用最简单的方式自动启动一个 Stardew Valley（星露谷物语）多人联机服务器。
 
-## Notes
+## 重要说明
 
-- Previous versions provided game files to create the server with the Docker container. To respect ConcernedApe's work and follow
-intellectual property law, this will no longer be the case. Users will now be required to use their own copy of the game.
-- Although I'm trying to put out updates, I don't have the time for testing thoroughly, so if you find issues, please put 
-in an issue request and I will try to help.
-- Thanks printfuck for the base code.
+- 之前的版本会提供游戏文件来创建服务器。为了尊重 ConcernedApe（游戏开发者）的劳动成果并遵守知识产权法律，**将不再提供游戏文件**。用户现在需要使用自己购买的游戏副本。
+- 虽然我会尽力发布更新，但没有足够时间进行彻底测试。如果您发现问题，请提交 Issue，我会尽力提供帮助。
+- 感谢 printfuck 提供的基础代码。
 
-<a href="https://www.buymeacoffee.com/huntercavazos" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+<a href="https://www.buymeacoffee.com/huntercavazos" target="_blank"></a>
 
+## 设置指南
 
-## Setup
+### Steam 版本
 
-### Steam
+如果您在 Steam 上拥有这款游戏，此镜像将使用 [steamcmd](https://developer.valvesoftware.com/wiki/SteamCMD)从 Steam 服务器下载游戏。为此，它需要您的 Steam 账户信息。
 
-This image will download the game from Steam server using [steamcmd](https://developer.valvesoftware.com/wiki/SteamCMD) if you own the game. For that, it requires your Steam login.
-
-The credential variables are required only during building, not during game runtime.
+**凭证环境变量仅在首次构建或更新时需要，游戏运行时不需要。**
 
 ```
-## Set these variables only during the first build or during updates
-export STEAM_USER=<steamUsername>
-export STEAM_PASS=<steamPassword>
-export STEAM_GUARD=<lastesSteamGuardCode> # If you account is not protected, don't set
+## 仅在首次构建或更新时设置这些变量
+export STEAM_USER=<您的Steam用户名>
+export STEAM_PASS=<您的Steam密码>
+export STEAM_GUARD=<最新的SteamGuard验证码> # 如果您的账户没有启用Steam Guard保护，则无需设置
 
 docker compose -f docker-compose-steam.yml up
 ```
 
-#### Steam Guard
+#### Steam Guard 验证
 
-If your account is protected by Steam Guard, the build is a little time sensitive. You must open your app and
-export the current Steam Guard to `STEAM_GUARD` environment variable code right before building.
+如果您的账户受 Steam Guard 保护，构建过程对时间有些敏感。您必须在构建前，打开您的 Steam 手机应用，获取当前的 Steam Guard 验证码，并立即将其设置为 `STEAM_GUARD`环境变量。
 
-**Note: the code lasts a little longer than shown but not much.**
+**注意：验证码的有效时间比显示的稍长一点，但长不了太多。**
 
-After starting build, pay attention to your app. Even with the code, it will request for authorization which must be granted.
+开始构建后，请留意您的手机应用。即使提供了验证码，它可能仍会要求授权，您必须批准该授权。
 
-If the build fails or when you want to update with `docker compose -f docker-compose-steam.yml build --no-cache`, you should set the newer `STEAM_GUARD` again.
+如果构建失败，或者当您想使用 `docker compose -f docker-compose-steam.yml build --no-cache`更新时，您应该重新设置新的 `STEAM_GUARD`验证码。
 
 ```
-## Remove env variables after build
+## 构建完成后，建议移除环境变量
 unset STEAM_USER STEAM_PASS STEAM_GUARD
 ```
-### GOG
 
-To my knowledge there is no way to automate this. To use game files from GOG, you will need to download the Linux installer. 
-Sign in, go to Games, find Stardew, change the system to Linux, and download the game installer. The file will look something 
-like `stardew_valley_x.x.x.xxx.sh`. Unzip this file (using Git Bash if you are on Windows), and copy the files within the 
-`data/noarch/` directory to `docker/game_data/`. Start the container using `docker compose -f docker-compose-gog.yml up`. To 
-rebuild the container after updating the files, use `docker compose -f docker-compose-gog.yml build --no-cache`.
+### GOG 版本
 
-### Configuration
+据我所知，这个过程无法自动化。要使用 GOG 的游戏文件，您需要下载 Linux 安装程序。登录 GOG 账户，进入游戏库，找到 Stardew Valley，将系统切换为 Linux，然后下载游戏安装程序。文件名称类似 `stardew_valley_x.x.x.xxx.sh`。解压此文件（如果在 Windows 上，可以使用 Git Bash），然后将 `data/noarch/`目录内的所有文件复制到 `docker/game_data/`目录下。使用 `docker compose -f docker-compose-gog.yml up`启动容器。更新文件后，使用 `docker compose -f docker-compose-gog.yml build --no-cache`重新构建容器。
 
-Edit the docker-compose.yml with your desired configuration settings. Setting values are quite descriptive as to what
-they set.
+### 配置
+
+编辑 `docker-compose.yml`文件，根据您的需求修改配置。设置项的描述比较清晰，说明了它们的作用。
 
 ```
 environment:
-      # VNC
-      - VNC_PASSWORD=insecure
-      - DISPLAY_HEIGHT=900
-      - DISPLAY_WIDTH=1200
+      # VNC 设置
+      - VNC_PASSWORD=insecure # VNC 密码
+      - DISPLAY_HEIGHT=900    # 显示高度
+      - DISPLAY_WIDTH=1200   # 显示宽度
       
-      # Always On Server mod
-      ## Removing this will probably defeat the point of ever using this?
-      - ENABLE_ALWAYSONSERVER_MOD=${ENABLE_ALWAYSONSERVER_MOD-true}
-      - ALWAYS_ON_SERVER_HOTKEY=${ALWAYS_ON_SERVER_HOTKEY-F9}
-      - ALWAYS_ON_SERVER_PROFIT_MARGIN=${ALWAYS_ON_SERVER_PROFIT_MARGIN-100}
-      - ALWAYS_ON_SERVER_UPGRADE_HOUSE=${ALWAYS_ON_SERVER_UPGRADE_HOUSE-0}
-      - ALWAYS_ON_SERVER_PET_NAME=${ALWAYS_ON_SERVER_PET_NAME-Rufus}
-      - ALWAYS_ON_SERVER_FARM_CAVE_CHOICE_MUSHROOMS=${ALWAYS_ON_SERVER_FARM_CAVE_CHOICE_MUSHROOMS-true}
-      - ALWAYS_ON_SERVER_COMMUNITY_CENTER_RUN=${ALWAYS_ON_SERVER_COMMUNITY_CENTER_RUN-true}
-      - ALWAYS_ON_SERVER_TIME_OF_DAY_TO_SLEEP=${ALWAYS_ON_SERVER_TIME_OF_DAY_TO_SLEEP-2200}
-      - ALWAYS_ON_SERVER_LOCK_PLAYER_CHESTS=${ALWAYS_ON_SERVER_LOCK_PLAYER_CHESTS-false}
-      - ALWAYS_ON_SERVER_CLIENTS_CAN_PAUSE=${ALWAYS_ON_SERVER_CLIENTS_CAN_PAUSE-true}
-      - ALWAYS_ON_SERVER_COPY_INVITE_CODE_TO_CLIPBOARD=${ALWAYS_ON_SERVER_COPY_INVITE_CODE_TO_CLIPBOARD-false}
+      # Always On Server 模组
+      ## 禁用这个模组可能就失去了使用本项目的意义？
+      - ENABLE_ALWAYSONSERVER_MOD=${ENABLE_ALWAYSONSERVER_MOD-true} # 启用 Always On Server 模组
+      - ALWAYS_ON_SERVER_HOTKEY=${ALWAYS_ON_SERVER_HOTKEY-F9} # 服务器模式热键
+      - ALWAYS_ON_SERVER_PROFIT_MARGIN=${ALWAYS_ON_SERVER_PROFIT_MARGIN-100} # 利润边际
+      - ALWAYS_ON_SERVER_UPGRADE_HOUSE=${ALWAYS_ON_SERVER_UPGRADE_HOUSE-0} # 房屋升级等级
+      - ALWAYS_ON_SERVER_PET_NAME=${ALWAYS_ON_SERVER_PET_NAME-Rufus} # 宠物名称
+      - ALWAYS_ON_SERVER_FARM_CAVE_CHOICE_MUSHROOMS=${ALWAYS_ON_SERVER_FARM_CAVE_CHOICE_MUSHROOMS-true} # 农场洞穴选择蘑菇
+      - ALWAYS_ON_SERVER_COMMUNITY_CENTER_RUN=${ALWAYS_ON_SERVER_COMMUNITY_CENTER_RUN-true} # 社区中心任务开启
+      - ALWAYS_ON_SERVER_TIME_OF_DAY_TO_SLEEP=${ALWAYS_ON_SERVER_TIME_OF_DAY_TO_SLEEP-2200} # 每日睡觉时间
+      - ALWAYS_ON_SERVER_LOCK_PLAYER_CHESTS=${ALWAYS_ON_SERVER_LOCK_PLAYER_CHESTS-false} # 锁定玩家箱子
+      - ALWAYS_ON_SERVER_CLIENTS_CAN_PAUSE=${ALWAYS_ON_SERVER_CLIENTS_CAN_PAUSE-true} # 客户端可以暂停
+      - ALWAYS_ON_SERVER_COPY_INVITE_CODE_TO_CLIPBOARD=${ALWAYS_ON_SERVER_COPY_INVITE_CODE_TO_CLIPBOARD-false} # 复制邀请码到剪贴板
 
-      - ALWAYS_ON_SERVER_FESTIVALS_ON=${ALWAYS_ON_SERVER_FESTIVALS_ON-true}
-      - ALWAYS_ON_SERVER_EGG_HUNT_COUNT_DOWN=${ALWAYS_ON_SERVER_EGG_HUNT_COUNT_DOWN-600}
-      - ALWAYS_ON_SERVER_FLOWER_DANCE_COUNT_DOWN=${ALWAYS_ON_SERVER_FLOWER_DANCE_COUNT_DOWN-600}
-      - ALWAYS_ON_SERVER_LUAU_SOUP_COUNT_DOWN=${ALWAYS_ON_SERVER_LUAU_SOUP_COUNT_DOWN-600}
-      - ALWAYS_ON_SERVER_JELLY_DANCE_COUNT_DOWN=${ALWAYS_ON_SERVER_JELLY_DANCE_COUNT_DOWN-600}
-      - ALWAYS_ON_SERVER_GRANGE_DISPLAY_COUNT_DOWN=${ALWAYS_ON_SERVER_GRANGE_DISPLAY_COUNT_DOWN-600}
-      - ALWAYS_ON_SERVER_ICE_FISHING_COUNT_DOWN=${ALWAYS_ON_SERVER_ICE_FISHING_COUNT_DOWN-600}
+      # ... (此处省略了更多节日和超时设置，它们在原文档中列出)
+      # 例如：节日开关、各项活动倒计时、各种超时设置等
 
-      - ALWAYS_ON_SERVER_END_OF_DAY_TIMEOUT=${ALWAYS_ON_SERVER_END_OF_DAY_TIMEOUT-300}
-      - ALWAYS_ON_SERVER_FAIR_TIMEOUT=${ALWAYS_ON_SERVER_FAIR_TIMEOUT-1200}
-      - ALWAYS_ON_SERVER_SPIRITS_EVE_TIMEOUT=${ALWAYS_ON_SERVER_SPIRITS_EVE_TIMEOUT-900}
-      - ALWAYS_ON_SERVER_WINTER_STAR_TIMEOUT=${ALWAYS_ON_SERVER_WINTER_STAR_TIMEOUT-900}
-
-      - ALWAYS_ON_SERVER_EGG_FESTIVAL_TIMEOUT=${ALWAYS_ON_SERVER_EGG_FESTIVAL_TIMEOUT-120}
-      - ALWAYS_ON_SERVER_FLOWER_DANCE_TIMEOUT=${ALWAYS_ON_SERVER_FLOWER_DANCE_TIMEOUT-120}
-      - ALWAYS_ON_SERVER_LUAU_TIMEOUT=${ALWAYS_ON_SERVER_LUAU_TIMEOUT-120}
-      - ALWAYS_ON_SERVER_DANCE_OF_JELLIES_TIMEOUT=${ALWAYS_ON_SERVER_DANCE_OF_JELLIES_TIMEOUT-120}
-      - ALWAYS_ON_SERVER_FESTIVAL_OF_ICE_TIMEOUT=${ALWAYS_ON_SERVER_FESTIVAL_OF_ICE_TIMEOUT-120 }
-
-      # Auto Load Game mod
-      ## Removing this will mean you need to VNC in to manually start the game each boot
-      - ENABLE_AUTOLOADGAME_MOD=${ENABLE_AUTOLOADGAME-null}
-      - AUTO_LOAD_GAME_LAST_FILE_LOADED=${AUTO_LOAD_GAME_LAST_FILE_LOADED-null}
-      - AUTO_LOAD_GAME_FORGET_LAST_FILE_ON_TITLE=${AUTO_LOAD_GAME_FORGET_LAST_FILE_ON_TITLE-true}
-      - AUTO_LOAD_GAME_LOAD_INTO_MULTIPLAYER=${AUTO_LOAD_GAME_LOAD_INTO_MULTIPLAYER-true}
+      # Auto Load Game 模组
+      ## 禁用此模组意味着每次启动都需要通过 VNC 手动加载游戏
+      - ENABLE_AUTOLOADGAME_MOD=${ENABLE_AUTOLOADGAME-null} # 启用自动加载游戏模组
+      - AUTO_LOAD_GAME_LAST_FILE_LOADED=${AUTO_LOAD_GAME_LAST_FILE_LOADED-null} # 自动加载的最后存档文件名
+      - AUTO_LOAD_GAME_FORGET_LAST_FILE_ON_TITLE=${AUTO_LOAD_GAME_FORGET_LAST_FILE_ON_TITLE-true} # 在标题界面忘记最后加载的文件
+      - AUTO_LOAD_GAME_LOAD_INTO_MULTIPLAYER=${AUTO_LOAD_GAME_LOAD_INTO_MULTIPLAYER-true} # 加载进入多人模式
       
-      # Unlimited Players Mod
-      - ENABLE_UNLIMITEDPLAYERS_MOD=${ENABLE_UNLIMITEDPLAYERS-true}
-      - UNLIMITED_PLAYERS_PLAYER_LIMIT=${UNLIMITED_PLAYERS_PLAYER_LIMIT-8}
+      # Unlimited Players 模组
+      - ENABLE_UNLIMITEDPLAYERS_MOD=${ENABLE_UNLIMITEDPLAYERS-true} # 启用无限玩家模组
+      - UNLIMITED_PLAYERS_PLAYER_LIMIT=${UNLIMITED_PLAYERS_PLAYER_LIMIT-8} # 玩家数量上限
 
-      # Chat Commands mod
-      - ENABLE_CHATCOMMANDS_MOD=${ENABLE_CHATCOMMANDS_MOD-false}
+      # Chat Commands 模组
+      - ENABLE_CHATCOMMANDS_MOD=${ENABLE_CHATCOMMANDS_MOD-false} # 启用聊天命令模组
 
-      # Console Commands mod
-      - ENABLE_CONSOLECOMMANDS_MOD=${ENABLE_CONSOLECOMMANDS_MOD-false}
+      # Console Commands 模组
+      - ENABLE_CONSOLECOMMANDS_MOD=${ENABLE_CONSOLECOMMANDS_MOD-false} # 启用控制台命令模组
 
-      # Time Speed mod
-      - ENABLE_TIMESPEED_MOD=${ENABLE_TIMESPEED_MOD-false}
+      # Time Speed 模组
+      - ENABLE_TIMESPEED_MOD=${ENABLE_TIMESPEED_MOD-false} # 启用时间速度模组
 
-      ## Days are only 20 hours long
-      ##   7.0 = 14 mins per in game day (default)
-      ##  10.0 = 20 mins
-      ##  15.0 = 30 mins
-      ##  20.0 = 40 mins
-      ##  30.0 = 1 hour
-      ## 120.0 = 4 hours
-      ## 300.0 = 10 hours
-      ## 600.0 = 20 hours (realtime)
+      ## 游戏内一天的长度（默认为20小时）
+      ##   7.0 = 现实14分钟对应游戏1天（默认）
+      ##  10.0 = 20分钟
+      ##  15.0 = 30分钟
+      ##  20.0 = 40分钟
+      ##  30.0 = 1小时
+      ## 120.0 = 4小时
+      ## 300.0 = 10小时
+      ## 600.0 = 20小时（实时）
 
-      - TIME_SPEED_DEFAULT_TICK_LENGTH=${TIME_SPEED_DEFAULT_TICK_LENGTH-7.0}
-      - TIME_SPEED_TICK_LENGTH_BY_LOCATION_INDOORS=${TIME_SPEED_TICK_LENGTH_BY_LOCATION_INDOORS-7.0}
-      - TIME_SPEED_TICK_LENGTH_BY_LOCATION_OUTDOORS=${TIME_SPEED_TICK_LENGTH_BY_LOCATION_OUTDOORS-7.0}
-      - TIME_SPEED_TICK_LENGTH_BY_LOCATION_MINE=${TIME_SPEED_TICK_LENGTH_BY_LOCATION_MINE-7.0}
+      - TIME_SPEED_DEFAULT_TICK_LENGTH=${TIME_SPEED_DEFAULT_TICK_LENGTH-7.0} # 默认时间流速
+      - TIME_SPEED_TICK_LENGTH_BY_LOCATION_INDOORS=${TIME_SPEED_TICK_LENGTH_BY_LOCATION_INDOORS-7.0} # 室内时间流速
+      - TIME_SPEED_TICK_LENGTH_BY_LOCATION_OUTDOORS=${TIME_SPEED_TICK_LENGTH_BY_LOCATION_OUTDOORS-7.0} # 室外时间流速
+      - TIME_SPEED_TICK_LENGTH_BY_LOCATION_MINE=${TIME_SPEED_TICK_LENGTH_BY_LOCATION_MINE-7.0} # 矿洞时间流速
 
-      - TIME_SPEED_ENABLE_ON_FESTIVAL_DAYS=${TIME_SPEED_ENABLE_ON_FESTIVAL_DAYS-false}
-      - TIME_SPEED_FREEZE_TIME_AT=${TIME_SPEED_FREEZE_TIME_AT-null}
-      - TIME_SPEED_LOCATION_NOTIFY=${TIME_SPEED_LOCATION_NOTIFY-false}
+      - TIME_SPEED_ENABLE_ON_FESTIVAL_DAYS=${TIME_SPEED_ENABLE_ON_FESTIVAL_DAYS-false} # 节日启用时间控制
+      - TIME_SPEED_FREEZE_TIME_AT=${TIME_SPEED_FREEZE_TIME_AT-null} # 在指定时间冻结
+      - TIME_SPEED_LOCATION_NOTIFY=${TIME_SPEED_LOCATION_NOTIFY-false} # 地点变更通知
 
-      - TIME_SPEED_KEYS_FREEZE_TIME=${TIME_SPEED_KEYS_FREEZE_TIME-N}
-      - TIME_SPEED_KEYS_INCREASE_TICK_INTERVAL=${TIME_SPEED_KEYS_INCREASE_TICK_INTERVAL-OemPeriod}
-      - TIME_SPEED_KEYS_DECREASE_TICK_INTERVAL=${TIME_SPEED_KEYS_DECREASE_TICK_INTERVAL-OemComma}
-      - TIME_SPEED_KEYS_RELOAD_CONFIG=${TIME_SPEED_KEYS_RELOAD_CONFIG-B}
+      - TIME_SPEED_KEYS_FREEZE_TIME=${TIME_SPEED_KEYS_FREEZE_TIME-N} # 冻结时间热键
+      - TIME_SPEED_KEYS_INCREASE_TICK_INTERVAL=${TIME_SPEED_KEYS_INCREASE_TICK_INTERVAL-OemPeriod} # 加快时间热键
+      - TIME_SPEED_KEYS_DECREASE_TICK_INTERVAL=${TIME_SPEED_KEYS_DECREASE_TICK_INTERVAL-OemComma} # 减慢时间热键
+      - TIME_SPEED_KEYS_RELOAD_CONFIG=${TIME_SPEED_KEYS_RELOAD_CONFIG-B} # 重载配置热键
 
-      # Crops Anytime Anywhere mod
-      - ENABLE_CROPSANYTIMEANYWHERE_MOD=${ENABLE_CROPSANYTIMEANYWHERE_MOD-false}
+      # Crops Anytime Anywhere 模组
+      - ENABLE_CROPSANYTIMEANYWHERE_MOD=${ENABLE_CROPSANYTIMEANYWHERE_MOD-false} # 启用随处随时种地模组
 
-      - CROPS_ANYTIME_ANYWHERE_ENABLE_IN_SEASONS_SPRING=${CROPS_ANYTIME_ANYWHERE_ENABLE_IN_SEASONS_SPRING-true}
-      - CROPS_ANYTIME_ANYWHERE_ENABLE_IN_SEASONS_SUMMER=${CROPS_ANYTIME_ANYWHERE_ENABLE_IN_SEASONS_SUMMER-true}
-      - CROPS_ANYTIME_ANYWHERE_ENABLE_IN_SEASONS_FALL=${CROPS_ANYTIME_ANYWHERE_ENABLE_IN_SEASONS_FALL-true}
-      - CROPS_ANYTIME_ANYWHERE_ENABLE_IN_SEASONS_WINTER=${CROPS_ANYTIME_ANYWHERE_ENABLE_IN_SEASONS_WINTER-true}
+      - CROPS_ANYTIME_ANYWHERE_ENABLE_IN_SEASONS_SPRING=${CROPS_ANYTIME_ANYWHERE_ENABLE_IN_SEASONS_SPRING-true} # 春季可种植
+      - CROPS_ANYTIME_ANYWHERE_ENABLE_IN_SEASONS_SUMMER=${CROPS_ANYTIME_ANYWHERE_ENABLE_IN_SEASONS_SUMMER-true} # 夏季可种植
+      - CROPS_ANYTIME_ANYWHERE_ENABLE_IN_SEASONS_FALL=${CROPS_ANYTIME_ANYWHERE_ENABLE_IN_SEASONS_FALL-true} # 秋季可种植
+      - CROPS_ANYTIME_ANYWHERE_ENABLE_IN_SEASONS_WINTER=${CROPS_ANYTIME_ANYWHERE_ENABLE_IN_SEASONS_WINTER-true} # 冬季可种植
 
-      - CROPS_ANYTIME_ANYWHERE_FARM_ANY_LOCATION=${CROPS_ANYTIME_ANYWHERE_FARM_ANY_LOCATION-true}
+      - CROPS_ANYTIME_ANYWHERE_FARM_ANY_LOCATION=${CROPS_ANYTIME_ANYWHERE_FARM_ANY_LOCATION-true} # 在任何地点耕种
 
-      - CROPS_ANYTIME_ANYWHERE_FORCE_TILLABLE_DIRT=${CROPS_ANYTIME_ANYWHERE_FORCE_TILLABLE_DIRT-true}
-      - CROPS_ANYTIME_ANYWHERE_FORCE_TILLABLE_GRASS=${CROPS_ANYTIME_ANYWHERE_FORCE_TILLABLE_GRASS-true}
-      - CROPS_ANYTIME_ANYWHERE_FORCE_TILLABLE_STONE=${CROPS_ANYTIME_ANYWHERE_FORCE_TILLABLE_STONE-false}
-      - CROPS_ANYTIME_ANYWHERE_FORCE_TILLABLE_OTHER=${CROPS_ANYTIME_ANYWHERE_FORCE_TILLABLE_OTHER-false}
+      - CROPS_ANYTIME_ANYWHERE_FORCE_TILLABLE_DIRT=${CROPS_ANYTIME_ANYWHERE_FORCE_TILLABLE_DIRT-true} # 强制土地可耕种
+      - CROPS_ANYTIME_ANYWHERE_FORCE_TILLABLE_GRASS=${CROPS_ANYTIME_ANYWHERE_FORCE_TILLABLE_GRASS-true} # 强制草地可耕种
+      - CROPS_ANYTIME_ANYWHERE_FORCE_TILLABLE_STONE=${CROPS_ANYTIME_ANYWHERE_FORCE_TILLABLE_STONE-false} # 强制石头地可耕种
+      - CROPS_ANYTIME_ANYWHERE_FORCE_TILLABLE_OTHER=${CROPS_ANYTIME_ANYWHERE_FORCE_TILLABLE_OTHER-false} # 强制其他地形可耕种
 
-      # Friends Forever mod
-      - ENABLE_FRIENDSFOREVER_MOD=${ENABLE_FRIENDSFOREVER_MOD-false}
+      # Friends Forever 模组
+      - ENABLE_FRIENDSFOREVER_MOD=${ENABLE_FRIENDSFOREVER_MOD-false} # 启用友谊永固模组
 
-      - FRIENDS_FOREVER_AFFECT_SPOUSE=${FRIENDS_FOREVER_AFFECT_SPOUSE-false}
-      - FRIENDS_FOREVER_AFFECT_DATES=${FRIENDS_FOREVER_AFFECT_DATES-true}
-      - FRIENDS_FOREVER_AFFECT_EVERYONE_ELSE=${FRIENDS_FOREVER_AFFECT_EVERYONE_ELSE-true}
-      - FRIENDS_FOREVER_AFFECT_ANIMALS=${FRIENDS_FOREVER_AFFECT_ANIMALS-true}
+      - FRIENDS_FOREVER_AFFECT_SPOUSE=${FRIENDS_FOREVER_AFFECT_SPOUSE-false} # 影响配偶
+      - FRIENDS_FOREVER_AFFECT_DATES=${FRIENDS_FOREVER_AFFECT_DATES-true} # 影响约会对象
+      - FRIENDS_FOREVER_AFFECT_EVERYONE_ELSE=${FRIENDS_FOREVER_AFFECT_EVERYONE_ELSE-true} # 影响其他所有人
+      - FRIENDS_FOREVER_AFFECT_ANIMALS=${FRIENDS_FOREVER_AFFECT_ANIMALS-true} # 影响动物
 
-      # No Fence Decay mod
-      - ENABLE_NOFENCEDECAY_MOD=${ENABLE_NOFENCEDECAY_MOD-false}
+      # No Fence Decay 模组
+      - ENABLE_NOFENCEDECAY_MOD=${ENABLE_NOFENCEDECAY_MOD-false} # 启用围栏不腐烂模组
 
-      # Non-destructive NPCs mod
-      - ENABLE_NONDESTRUCTIVENPCS_MOD=${ENABLE_NONDESTRUCTIVENPCS_MOD-false}
+      # Non-destructive NPCs 模组
+      - ENABLE_NONDESTRUCTIVENPCS_MOD=${ENABLE_NONDESTRUCTIVENPCS_MOD-false} # 启用非破坏性NPC模组
 ```
 
-## Game Setup
+## 游戏设置
 
-Initially, you have to create or load a game once via VNC or web interface. After that, the Autoload Mod jumps into the
-previously loaded game save everytime you restart or rebuild the container. The AutoLoad Mod config file is by default
-mounted as a volume, since it keeps the state of the ongoing game save, but you can also copy your existing game save to
-the `Saves` volume and define the game save's name in the environment variables. Once started, press the Always On
-Hotkey (default F9) to enter server mode.
+首次使用时，您需要通过 VNC 或网页界面创建或加载一次游戏存档。之后，每次重启或重建容器时，AutoLoad 模组都会自动跳转到之前加载的游戏存档。AutoLoad 模组的配置文件默认作为卷（volume）挂载，因为它保存了正在进行的游戏存档状态。您也可以将现有的游戏存档复制到 `Saves`卷中，并在环境变量中定义存档名称。启动后，按下 Always On 热键（默认为 F9）即可进入服务器模式。
 
-### VNC
+### VNC 连接
 
-Use a VNC client like `TightVNC` on Windows or plain `vncviewer` on any Linux distribution to connect to the server. You
-can modify the VNC Port and IP address and Password in the `docker-compose.yml` file like this:
+使用 VNC 客户端（如 Windows 上的 `TightVNC`或 Linux 上的 `vncviewer`）连接到服务器。您可以在 `docker-compose.yml`文件中修改 VNC 端口、IP 地址和密码，如下所示：
 
-Localhost:
+本地连接示例：
 
 ```
-   # Server is only reachable on localhost on port 5902...
+# 服务器仅可在本地的 5902 端口访问...
    ports:
      - 127.0.0.1:5902:5900
-   # ... with the password "insecure"
+   # ... 密码是 "insecure"
    environment:
      - VNCPASS=insecure
 ```
 
-### Web Interface
+### 网页界面
 
-On port 5800 (mapped to 5801 by default) inside the container is a web interface. This is a bit easier and more
-accessible than just the VNC interface. Although you will be asked for the vnc password, I wouldn't recommend exposing
-the port to the outside world.
+容器内的 5800 端口（默认映射到主机的 5801 端口）提供了一个网页界面。这比单纯的 VNC 界面更简单、更容易访问。虽然您需要输入 VNC 密码，但不建议将此端口暴露到公网。
 
-![img](https://store.eris.cc/uploads/859865e1ab5b23fb223923d9a7e4806b.PNG)
+## 访问服务器
 
-## Accessing the server
+- **直接 IP 连接**：您需要在互联网上设置直接 IP 访问，通过开放（或转发）端口 24642 来使用"加入局域网游戏"功能。您可以在 compose 文件中随意更改此端口映射。然后其他人就可以通过您的外部 IP"加入局域网游戏"。
 
-- Direct IP: You will need to set a up direct IP access over the internet "Join LAN Game" by opening (or forwarding)
-  port 24642. Feel free to change this mapping in the compose file. People can then "Join LAN Game" via your external IP.
+（此说明取自模组描述。更多信息请参阅 [Always On Server](https://www.nexusmods.com/stardewvalley/mods/2677?tab=description)）
 
-(Taken from mod description. See [Always On Server](https://www.nexusmods.com/stardewvalley/mods/2677?tab=description)
-for more info.)
+## 内置模组列表
 
-## Mods
+- [Always On Server](https://www.nexusmods.com/stardewvalley/mods/2677)(默认: 启用，建议保留)
+- [Auto Load Game](https://www.nexusmods.com/stardewvalley/mods/2509)(默认: 启用)
+- [Crops Anytime Anywhere](https://www.nexusmods.com/stardewvalley/mods/3000)(默认: 禁用)
+- [Friends Forever](https://www.nexusmods.com/stardewvalley/mods/1738)(默认: 禁用)
+- [No Fence Decay](https://www.nexusmods.com/stardewvalley/mods/1180)(默认: 禁用)
+- [Non Destructive NPCs](https://www.nexusmods.com/stardewvalley/mods/5176)(默认: 禁用)
+- [Remote Control](https://github.com/Novex/stardew-remote-control)(默认: 启用)
+- [TimeSpeed](https://www.nexusmods.com/stardewvalley/mods/169)(默认: 禁用)
+- [Unlimited Players](https://www.nexusmods.com/stardewvalley/mods/2213)(默认: 启用)
 
-- [Always On Server](https://www.nexusmods.com/stardewvalley/mods/2677) (Default: Required)
-- [Auto Load Game](https://www.nexusmods.com/stardewvalley/mods/2509) (Default: On)
-- [Crops Anytime Anywhere](https://www.nexusmods.com/stardewvalley/mods/3000) (Default: Off)
-- [Friends Forever](https://www.nexusmods.com/stardewvalley/mods/1738) (Default: Off)
-- [No Fence Decay](https://www.nexusmods.com/stardewvalley/mods/1180) (Default: Off)
-- [Non Destructive NPCs](https://www.nexusmods.com/stardewvalley/mods/5176) (Default: Off)
-- [Remote Control](https://github.com/Novex/stardew-remote-control) (Default: On)
-- [TimeSpeed](https://www.nexusmods.com/stardewvalley/mods/169) (Default: Off)
-- [Unlimited Players](https://www.nexusmods.com/stardewvalley/mods/2213) (Default: On)
+## 故障排除
 
-## Troubleshooting
+### 服务器卡在"等待一天结束"
 
-### Waiting for Day to End
+检查 VNC 界面，确认主机是否卡在了某个提示界面。
 
-Check VNC just to make sure the host hasn't gotten stuck on a prompt.
+### 控制台出现错误信息
 
-### Error Messages in Console
+通常您可以忽略那里的任何消息。如果游戏无法启动或出现任何错误，您应该查找类似"cannot open display"的消息，这很可能表明存在权限错误。
 
-Usually you should be able to ignore any message there. If the game doesn't start or any errors appear, you should look
-for messages like "cannot open display", which would most likely indicate permission errors.
+### VNC 连接问题
 
-### VNC
-
-Access the game via VNC to initially load or start a pre-generated game save. You can control the server from there or
-edit the config.json files in the configs folder.
+通过 VNC 访问游戏，以初始加载或启动一个预先生成的游戏存档。您可以从那里控制服务器，或者编辑 `configs`文件夹中的 `config.json`文件。
