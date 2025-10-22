@@ -2,13 +2,13 @@
 
 这个项目旨在用最简单的方式自动启动一个 Stardew Valley（星露谷物语）多人联机服务器。
 
+配置步骤与原仓库有些区别，可以参考[使用Docker搭建星露谷最新服务端（Steam下载版）](https://insectmk.cn/posts/b01f80ee/)。
+
 ## 重要说明
 
 - 之前的版本会提供游戏文件来创建服务器。为了尊重 ConcernedApe（游戏开发者）的劳动成果并遵守知识产权法律，**将不再提供游戏文件**。用户现在需要使用自己购买的游戏副本。
 - 虽然我会尽力发布更新，但没有足够时间进行彻底测试。如果您发现问题，请提交 Issue，我会尽力提供帮助。
 - 感谢 printfuck 提供的基础代码。
-
-<a href="https://www.buymeacoffee.com/huntercavazos" target="_blank"></a>
 
 ## 设置指南
 
