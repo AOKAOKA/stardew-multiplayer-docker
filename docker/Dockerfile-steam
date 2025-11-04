@@ -56,7 +56,7 @@ RUN wget -qO dotnet.tar.gz https://download.visualstudio.microsoft.com/download/
      ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
 
 # 删除原来的 wget 命令，替换为：
-COPY smapi/SMAPI-4.3.2-installer.zip /data/nexus.zip
+COPY smapi/SMAPI-4.1.10-installer.zip /data/nexus.zip
 
 # 后续保持原来的解压和安装命令
 RUN unzip /data/nexus.zip -d /data/nexus/ && \
@@ -73,8 +73,8 @@ RUN chmod +x $GAME_PATH/StardewValley && \
     chmod +x /opt/*.sh
 
 RUN mkdir /etc/services.d/utils && touch /etc/services.d/app/utils.dep
-COPY run /etc/services.d/utils/run 
-RUN chmod +x /etc/services.d/utils/run 
+COPY run /etc/services.d/utils/run
+RUN chmod +x /etc/services.d/utils/run
 
 COPY start.sh $GAME_PATH/start.sh
 RUN chmod +x $GAME_PATH/start.sh

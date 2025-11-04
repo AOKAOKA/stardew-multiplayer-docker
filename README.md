@@ -44,13 +44,15 @@ STEAM_GUARD=<最新的Steam令牌验证码> # 如果你的账户没有启用Stea
 
 由于原仓库构建镜像时，SMAPI在构建镜像的时候从Github下载的，拖慢了构建镜像的速度，现在改成了可预先下载，使用本地SMAPI构建。
 
-到[SMAPI-Releases页面](https://github.com/Pathoschild/SMAPI/releases)下载你需要的插件平台版本，如：`SMAPI-4.3.2-installer.zip`，并放入到`docker/smapi`文件夹（需要新建）中。
+到[SMAPI-Releases页面](https://github.com/Pathoschild/SMAPI/releases)下载你需要的插件平台版本，如：`SMAPI-4.1.10-installer.zip`，并放入到`docker/smapi`文件夹（需要新建）中。
+
+（PS：之前在某个文章的评论区看到，[Always On Server模组](https://www.nexusmods.com/stardewvalley/mods/2677)，在每日结算的时候没有自动确认，导致其他玩家一直在等待，需要手动点击服主机器人的OK，解决方案是将SMAPI降级到`4.1.7`以前的版本，这里使用的本项目原作者的版本->[4.1.10](https://github.com/Pathoschild/SMAPI/releases/tag/4.1.10)，经测试一样有效。）
 
 放入后，修改`docker/Dockerfile-steam`文件：
 
 ```dockerfile
-# 修改这行，将SMAPI-4.3.2-installer.zip改为你对应的SMAPI Installer包
-COPY smapi/SMAPI-4.3.2-installer.zip /data/nexus.zip
+# 修改这行，将SMAPI-4.1.10-installer.zip改为你对应的SMAPI Installer包
+COPY smapi/SMAPI-4.1.10-installer.zip /data/nexus.zip
 ```
 
 ### VNC密码
