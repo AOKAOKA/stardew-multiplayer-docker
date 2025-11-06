@@ -15,13 +15,14 @@ services:
         ## Stardew steamId
         SRCDS_APPID: 413150
     container_name: stardew
+    restart: always  # 修改为 always，确保机器重启后容器也启动
     environment:
       # VNC 设置
       - VNC_PASSWORD=insecure # VNC密码
       - DISPLAY_HEIGHT=900 # 显示高度
       - DISPLAY_WIDTH=1200 # 显示宽度
       - X11VNC_EXTRA_OPTS=-noxdamage -reopen -forever
-  
+
       # Always On Server mod
       ## 禁用这个模组可能就失去了使用本项目的意义？
       - ENABLE_ALWAYSONSERVER_MOD=${ENABLE_ALWAYSONSERVER_MOD-true} # 启用模组
@@ -127,7 +128,7 @@ services:
 
       # Non-destructive NPCs mod
       - ENABLE_NONDESTRUCTIVENPCS_MOD=${ENABLE_NONDESTRUCTIVENPCS_MOD-false} # 启用非破坏性NPC模组
-      
+
       # 开启拖拉机模组Tractor，
       - ENABLE_TRACTOR_MOD=${ENABLE_TRACTOR_MOD-true}
       # 拖拉机发动声音（由于Docker环境没有声音输出设备，这里需要设置为None，否则会报错）
@@ -138,7 +139,7 @@ services:
       - 5902:5900
       # NOVNC WEB
       - 5801:5800
-      # Game  
+      # Game
       - 24642:24642/udp
     volumes:
       # 存档保存到这里
@@ -150,4 +151,4 @@ services:
     #   ## If you don't plan to play using VNC, 1 core should be enough to host for others
     #   resources:
     #     limits:
-    #       cpus: "1" 
+    #       cpus: "1"
