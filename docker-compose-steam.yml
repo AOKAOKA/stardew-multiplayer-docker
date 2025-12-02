@@ -134,6 +134,9 @@ services:
       # 拖拉机发动声音（由于Docker环境没有声音输出设备，这里需要设置为None，否则会报错）
       - TRACTOR_SOUNDEFFECTS=${TRACTOR_SOUNDEFFECTS-None}
 
+      # 开启虚拟键盘模组（方便WebVNC重启服务插件）VirtualKeyboard-29884
+      - ENABLE_VIRTUALKEYBOARD_MOD=${ENABLE_VIRTUALKEYBOARD_MOD-true}
+
     ports:
       # VNC
       - 5902:5900
