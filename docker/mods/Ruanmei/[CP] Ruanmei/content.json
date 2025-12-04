@@ -1,0 +1,1331 @@
+{
+  "Format": "2.3.0",
+  "CustomLocations": [ 
+    {
+      "Name": "Custom_wurenzhidi",
+      "FromMapFile": "assets/Maps/wurenzhidi.tbin"
+    },
+    {
+      "Name": "Custom_ruanmeiroom",  
+      "FromMapFile": "assets/Maps/ruanmeiroom.tbin"
+    },
+ {
+      "Name": "Custom_guochang",
+      "FromMapFile": "assets/Maps/guochang.tbin"
+    },
+ {
+        "Name": "Custom_STAR1",
+        "FromMapFile": "assets/CG/STAR1.tbin"
+      }
+  ],
+  "Changes": [
+    {
+      "Action": "EditMap", 
+      "Target": "Maps/Forest", 
+      "FromFile": "assets/Maps/mofazhen.tbin", 
+      "ToArea": {
+        "X": 4, 
+        "Y": 4, 
+        "Width": 1, 
+        "Height": 1
+      }, 
+      "TextOperations": [
+        {
+          "Operation": "Append", 
+          "Target": [
+            "MapProperties",
+            "Warp"
+          ], 
+          "Value": "4 4 Custom_guochang 22 18", 
+          "Delimiter": " "
+        }
+      ]
+    },
+      {
+          "Action" : "EditData",
+          "Target" : "Data/Quests",
+          "Entries":{
+              "10242233":"ItemDelivery/收集蝙蝠翅膀/阮·梅需要一些蝙蝠翅膀,不需要问原因。她会给你300G作为奖励。/递交给阮·梅十个蝙蝠翅膀/Ruanmei 767 10/-1/300/-1/true/”这正是我需要的，谢谢你。$6",
+              "10242234":"ItemDelivery/收集太阳精华/阮·梅需要一些太阳精华,不需要问原因。她会给你1600G作为奖励。/递交给阮·梅二十个太阳精华/Ruanmei 768 20/-1/1600/-1/true/”能这么快收集到这些真是出乎我意料，谢谢，辛苦你了。$6",
+              "10242235":"ItemDelivery/收集史莱姆泥/实验室出了点意外，需要一些史莱姆泥。阮·梅会给你500G作为奖励。/递交给阮·梅五十个史莱姆泥/Ruanmei 766 50/-1/500/-1/true/”这次真是多亏你了，谢谢。$6",
+              "10242236":"ItemDelivery/收集虚空精华/阮·梅需要一些虚空精华,不需要问原因。她会给你1600G作为奖励。/递交给阮·梅二十个虚空精华/Ruanmei 769 20/-1/1600/-1/true/”能这么快收集到这些真是出乎我意料，谢谢，辛苦你了。$6",
+              "10242237":"ItemDelivery/采摘仙人掌果子/做甜品需要一些新鲜的仙人掌果子,如果有人能帮我采摘到会给2000G作为奖励。/递交给阮·梅十个仙人掌果子/Ruanmei 90 10/-1/2000/-1/true/”谢谢，这对我很重要。#$b#或许你愿意在我做完后品尝一下？$7",
+              "10242238":"ItemDelivery/采摘美洲大树莓/最近有些灵感，需要一些新鲜的美洲大树莓,如果有人能帮我采摘到会给600G作为奖励。/递交给阮·梅二十个美洲大树莓/Ruanmei 296 20/-1/600/-1/true/”谢谢，这对我很重要。#$b#或许你愿意在我做完后品尝一下？$7"
+            }
+      },
+    {
+      "Action": "EditData", 
+      "Target": "Data/Characters",
+      "Entries": {
+        "Ruanmei": { 
+          "DisplayName": "{{i18n:Characters.displayName.ruanmei}}", 
+          "BirthSeason": "winter", 
+          "BirthDay": 27, 
+          "Age": "Adult", 
+          "HomeRegion": "Other", 
+          "Language": "Default", 
+          "Gender": "Female", 
+          "CanSocialize": true, 
+          "CanCommentOnPurchasedShopItems": false, 
+          "CanReceiveGifts": true, 
+          "IsDarkSkinned": false, 
+          "CanBeRomanced": false,
+          "Calendar": "HiddenUntilMet", 
+          "SocialTab": "HiddenUntilMet", 
+          "SpouseGiftJealousy": false, 
+          "SpouseGiftJealousyFriendshipChange": 30, 
+          "ItemDeliveryQuests":true,
+          "PerfectionScore": false, 
+          "EndSlideShow": "Hidden", 
+          "CanVisitIsland": true, 
+          "DumpsterDiveEmote": 8, 
+          "DumpsterDiveFriendshipEffect": -25, 
+          "FlowerDanceCanDance": false, 
+          "WinterStarParticipant": true, 
+          "FriendsAndFamily": {}, 
+          "UnlockConditions": null,
+          "SpawnIfMissing": true,
+          "Home": [
+            {
+              "Id": "Default",
+              "Location": "Custom_ruanmeiroom", 
+              "Tile": {
+                "X": 2, 
+                "Y": 11 
+              },
+              "Direction": "left" 
+            }
+          ],
+          "TextureName": null,
+          "Size": {
+            "X": 16,
+            "Y": 32
+          }, 
+          "Breather": true, 
+          "KissSpriteIndex": 28,
+          "HiddenProfileEmoteSound": null,
+          "HiddenProfileEmoteDuration": -1,
+          "HiddenProfileEmoteStartFrame": 16,
+          "HiddenProfileEmoteFrameCount": 4,
+          "HiddenProfileEmoteFrameDuration": 200.0,
+          "FestivalVanillaActorIndex": 0,
+          "CustomFields": {},
+          "SpouseRoom": {
+            "MapAsset": "Custom_ruanmeiSpouseRoom", 
+            "MapSourceRect": {
+              "X": 0,
+              "Y": 0,
+              "Width": 6,
+              "Height": 9
+            }
+          },
+          "SpousePatio": {
+            "MapAsset": "ruanmei_Spouse_Area", 
+            "MapSourceRect": {
+              "X": 0,
+              "Y": 0,
+              "Width": 4,
+              "Height": 4 
+            },
+            "SpriteAnimationFrames":[
+    [20, 1000]  
+]
+          },
+          "Appearance": [
+            {
+              "Id": "RuanmeiBeach",
+              "Condition": null,
+              "Season": null,
+              "Indoors": true,
+              "Outdoors": true,
+              "Portrait": "Portraits/Ruanmei_Beach",
+              "Sprite": "Characters/Ruanmei_Beach",
+              "IsIslandAttire": true
+            },
+            {
+              "Id": "RuanmeiWinter",
+              "Condition": "SEASON Winter",
+              "Season": "Winter",
+              "Indoors": true,
+              "Outdoors": true,
+              "Portrait": "Portraits/Ruanmei_Winter",
+              "Sprite": "Characters/Ruanmei_Winter",
+              "IsIslandAttire": false 
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Portraits/Ruanmei_Winter",
+      "FromFile": "assets/Portraits/Ruanmei_Winter.png",
+      "Update":"OnDayStart"
+     },
+    {
+      "Action": "Load",
+      "Target": "Characters/Ruanmei_Winter",
+      "FromFile": "assets/Sprite/Ruanmei_Winter.png",
+      "Update":"OnDayStart"
+     },
+ {
+      "Action": "Load",
+      "Target": "Portraits/Ruanmei_Beach",
+      "FromFile": "assets/Portraits/Ruanmei_Beach.png",
+      "Update":"OnLocationChange"
+     },
+    {
+      "Action": "Load",
+      "Target": "Characters/Ruanmei_Beach",
+      "FromFile": "assets/Sprite/Ruanmei_Beach.png",
+      "Update":"OnLocationChange"
+     },
+ {
+      "LogName": "Load Object",
+      "Action": "Load",
+      "Target": "Mods\\TDB\\Objects\\Item",
+      "FromFile": "assets/Image/Miniruanmei.png"
+  },
+  {
+    "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "Miniruanmei": {
+          "Name": "Miniruanmei",
+          "DisplayName": "{{i18n:item.Miniruanmei.ruanmei.name}}",
+          "Description": "{{i18n:item.Miniruanmei.ruanmei.description}}",
+          "Type": "Basic",
+          "Category": 0,
+          "Price": 500,
+          "Texture": "Mods\\TDB\\Objects\\Item",
+          "SpriteIndex": "0",
+          "Edibility": -300,
+          "ContextTags": [
+            "propose_roommate_Ruanmei",
+            "color_blue"
+          ]
+        }
+      }
+    },
+   {
+        "Action": "EditData",
+        "Target": "Data/Shops", 
+        "TargetField": [
+          "ShadowShop",  
+          "Items"
+        ],
+        "Entries": {
+          "Miniruanmei": {   
+            "Id": "Miniruanmei", 
+            "ItemId": "Miniruanmei",  
+            "AvailableStock": 1,
+            "IsRecipe": false,
+            "TradeItemId":84,
+            "TradeItemAmount":50,
+            "Condition": "PLAYER_HEARTS Current Ruanmei 10" 
+            }
+      }
+    },
+    {
+      "LogName": "PortraitFrames Data",
+      "Action": "EditData",
+      "Target": "Data/Furniture",
+      "Entries": {
+          "Ruanmei_Ruanmei_Portrait": "Ruanmei_Portrait/painting/2 2/2 2/1/30000/0/{{i18n:item.Ruanmei_Ruanmei_Portrait.ruanmei.name}}/0/RM\\Objects\\PortraitFrames"
+      }
+  },
+{
+      "LogName": "Load PortraitFrames Tilesheet",
+      "Action": "Load",
+      "Target": "RM/Objects/PortraitFrames",
+      "FromFile": "assets/image/Ruanmei_Portrait.png"
+  },
+     {
+        "Action": "EditData",
+        "Target": "Data/Shops", 
+        "TargetField": [
+          "Traveler",  
+          "Items"
+        ],
+        "Entries": {
+          "Ruanmei_Ruanmei_Portrait": {   
+            "Id": "Ruanmei_Ruanmei_Portrait", 
+            "ItemId": "(F)Ruanmei_Ruanmei_Portrait",  
+            "AvailableStock": 1,
+            "IsRecipe": false,
+            "Price": 30000,
+            "Condition": "PLAYER_HEARTS Current Ruanmei 14"
+            }
+      }
+    },
+ {
+      "Action": "Load",  
+      "Target": "Mods/ruanmeilove/RuanmeiCake",
+      "FromFile": "assets/image/RuanmeiCake.png"
+    },
+      {
+        "Action": "EditData",
+        "Target": "Data/Objects",  
+        "Entries": {
+          "RuanmeiCake": {  
+            "Name": "RuanmeiCake", 
+            "DisplayName": "{{i18n:item.RuanmeiCake.ruanmei.name}}", 
+            "Description": "{{i18n:item.RuanmeiCake.ruanmei.description}}", 
+            "Type": "Cooking",
+            "Category": -7,
+            "Price": 5000, 
+            "Texture": "Mods\\ruanmeilove\\RuanmeiCake", 
+            "SpriteIndex": 0, 
+            "Edibility": 100, 
+            "IsDrink": false,  
+            "ExcludeFromFishingCollection": true, 
+            "ExcludeFromShippingCollection": true, 
+            "ExcludeFromRandomSale": false,
+            "Buffs": [ 
+              {
+                "Duration": 250, 
+                "CustomAttributes": {
+                  "FarmingLevel": 3, 
+                  "FishingLevel": 5, 
+                  "MiningLevel": 3, 
+                  "LuckLevel": 4, 
+                  "ForagingLevel": 3,
+                  "MaxStamina": 30, 
+                  "MagneticRadius": 20, 
+                  "Speed": 2,
+                  "Defense": 2, 
+                  "Attack": 3 
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "Action": "EditData",
+        "Target": "Data/CookingRecipes",   
+        "Entries": {
+          "RuanmeiCake": "402 1 -6 1 245 2/ 25 5 / RuanmeiCake 1 / f Ruanmei 8 / "
+        }
+      },
+    {
+              "Action": "EditData",
+              "Target": "Data/NPCGiftTastes",
+              "TextOperations": [
+            { "Operation": "Append",
+                "Target": ["Entries", "Universal_like"], 
+                "Value": "RuanmeiCake",
+                "Delimiter": " "
+              }
+               ]
+      },
+       {
+        "Action": "EditData",
+        "Target": "Data/Mail",
+        "Entries": {
+          "RuanmeiCake_recipe": "[letterbg 3] {{i18n:letter.mail.Ruanmei_Thalantoxiflame_recipe.1}}^{{i18n:letter.mail.Ruanmei_RuanmeiCakeMail.1}}^{{i18n:letter.mail.Ruanmei_recipe.1}}%item cookingRecipe RuanmeiCake %%[#]{{i18n:letter.mail.Ruanmei_recipe.2}}"
+        } 
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/TriggerActions", 
+          "Entries": {
+              "RuanmeiCakeMail":{ 
+                  "Id": "RuanmeiCakeMail", 
+                  "Trigger": "DayEnding", 
+                  "Condition": "PLAYER_HEARTS Current Ruanmei 8",
+                  "Action": "AddMail Current RuanmeiCake_recipe tomorrow"} 
+              }
+            },
+    {
+      "Action": "Load",  
+      "Target": "Mods/ruanmeilove/Thepinkestcollision",
+      "FromFile": "assets/image/Thepinkestcollision.png"
+    },
+      {
+        "Action": "EditData",
+        "Target": "Data/Objects",  
+        "Entries": {
+          "Thepinkestcollision": {  
+            "Name": "Thepinkestcollision", 
+            "DisplayName": "{{i18n:item.Thepinkestcollision.ruanmei.name}}", 
+            "Description": "{{i18n:item.Thepinkestcollision.ruanmei.description}}", 
+            "Type": "Cooking",
+            "Category": -7,
+            "Price": 20, 
+            "Texture": "Mods\\ruanmeilove\\Thepinkestcollision", 
+            "SpriteIndex": 0, 
+            "Edibility": 50, 
+            "IsDrink": true,  
+            "ExcludeFromFishingCollection": true, 
+            "ExcludeFromShippingCollection": true, 
+            "ExcludeFromRandomSale": false,
+            "Buffs": [ 
+              {
+                "Duration": 300, 
+                "CustomAttributes": {
+                  "FarmingLevel": 0, 
+                  "FishingLevel": 0, 
+                  "MiningLevel": 0, 
+                  "LuckLevel": 5, 
+                  "ForagingLevel": 0,
+                  "MaxStamina": 0, 
+                  "MagneticRadius": 30, 
+                  "Speed": -2,
+                  "Defense": 0, 
+                  "Attack": 4 
+                }
+              }
+            ]
+          }
+        }
+      },
+       {
+        "Action": "EditData",
+        "Target": "Data/CookingRecipes",   
+        "Entries": {
+          "Thepinkestcollision": "684 1 296 2 348 1/ 25 5 / Thepinkestcollision 1 / f Ruanmei 10 / "
+        }
+      },
+    {
+              "Action": "EditData",
+              "Target": "Data/NPCGiftTastes",
+              "TextOperations": [
+            { "Operation": "Append",
+                "Target": ["Entries", "Universal_like"], 
+                "Value": "Thepinkestcollision",
+                "Delimiter": " "
+              }
+               ]
+      },
+       {
+        "Action": "EditData",
+        "Target": "Data/Mail",
+        "Entries": {
+          "Thepinkestcollision_recipe": "[letterbg 3] @{{i18n:letter.mail.Ruanmei_Thepinkestcollision_recipe.1}}^{{i18n:letter.mail.Ruanmei_Thepinkestcollision_recipe.2}}^{{i18n:letter.mail.Ruanmei_recipe.1}}%item cookingRecipe Thepinkestcollision %%[#]{{i18n:letter.mail.Ruanmei_recipe.2}}"
+        } 
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/TriggerActions", 
+          "Entries": {
+              "ThepinkestcollisionMail":{ 
+                  "Id": "ThepinkestcollisionMail", 
+                  "Trigger": "DayEnding", 
+                  "Condition": "PLAYER_HEARTS Current Ruanmei 10",
+                  "Action": "AddMail Current Thepinkestcollision_recipe tomorrow"} 
+              }
+            },
+      {
+      "Action": "Load",  
+      "Target": "Mods/ruanmeilove/Thalantoxiflame",
+      "FromFile": "assets/image/Thalantoxiflame.png"
+    },
+      {
+        "Action": "EditData",
+        "Target": "Data/Objects",  
+        "Entries": {
+          "Thalantoxiflame": {  
+            "Name": "Thalantoxiflame", 
+            "DisplayName": "{{i18n:item.Thalantoxiflame.ruanmei.name}}", 
+            "Description": "{{i18n:item.Thalantoxiflame.ruanmei.description}}", 
+            "Type": "Cooking",
+            "Category": -7,
+            "Price": 20, 
+            "Texture": "Mods\\ruanmeilove\\Thalantoxiflame", 
+            "SpriteIndex": 0, 
+            "Edibility": 20, 
+            "IsDrink": true,  
+            "ExcludeFromFishingCollection": true, 
+            "ExcludeFromShippingCollection": true, 
+            "ExcludeFromRandomSale": false,
+            "Buffs": [ 
+              {
+                "Duration": 300, 
+                "CustomAttributes": {
+                  "FarmingLevel": 0, 
+                  "FishingLevel": 0, 
+                  "MiningLevel": 0, 
+                  "LuckLevel": 5, 
+                  "ForagingLevel": 0,
+                  "MaxStamina": 0, 
+                  "MagneticRadius": 30, 
+                  "Speed": 4,
+                  "Defense": 8, 
+                  "Attack": 8 
+                }
+              }
+            ]
+          }
+        }
+      },
+       {
+        "Action": "EditData",
+        "Target": "Data/CookingRecipes",   
+        "Entries": {
+          "Thalantoxiflame": "305 1 258 1 386 1/ 25 5 / Thalantoxiflame 1 / f Ruanmei 6 / "
+        }
+      },
+    {
+              "Action": "EditData",
+              "Target": "Data/NPCGiftTastes",
+              "TextOperations": [
+            { "Operation": "Append",
+                "Target": ["Entries", "Universal_like"], 
+                "Value": "Thalantoxiflame",
+                "Delimiter": " "
+              }
+               ]
+      },
+       {
+        "Action": "EditData",
+        "Target": "Data/Mail",
+        "Entries": {
+          "Thalantoxiflame_recipe": "[letterbg 3] {{i18n:letter.mail.Ruanmei_Thalantoxiflame_recipe.1}}^{{i18n:letter.mail.Ruanmei_Thalantoxiflame_recipe.2}}^^{{i18n:letter.mail.Ruanmei_Thalantoxiflame_recipe.3}}^{{i18n:letter.mail.Ruanmei_recipe.1}}%item cookingRecipe Thalantoxiflame %%[#]{{i18n:letter.mail.Ruanmei_recipe.2}}"
+        } 
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/TriggerActions", 
+          "Entries": {
+              "ThalantoxiflameMail":{ 
+                  "Id": "ThalantoxiflameMail", 
+                  "Trigger": "DayEnding", 
+                  "Condition": "PLAYER_HEARTS Current Ruanmei 6",
+                  "Action": "AddMail Current Thalantoxiflame_recipe tomorrow"} 
+              }
+            },
+             {
+      "LogName": "Load Object",
+      "Action": "Load",
+      "Target": "Mods\\TDB\\Objects\\Weapons",
+      "FromFile": "assets/Image/qiubang.png"
+  },
+  {
+    "Action": "EditData",
+      "Target": "Data/Weapons",
+      "Entries": {
+        "qiubang": {
+          "Name": "qiubang",
+          "DisplayName": "{{i18n:item.qiubang.ruanmei.name}}",
+          "Description": "{{i18n:item.qiubang.ruanmei.description}}",
+          "MinDamage": 110,
+          "MaxDamage": 130,
+          "Knockback": 1.0,
+          "Speed": 2,
+          "Precision": 80,
+          "Defense": 10,
+          "Type": 2,
+          "AreaOfEffect": 2,
+          "CritChance": 0.5,
+          "CritMultiplier": 1.0,
+          "CanBeLostOnDeath": true,
+          "Texture": "Mods\\TDB\\Objects\\Weapons",
+          "SpriteIndex": 0
+      }
+      }
+},
+{
+      "Action": "EditData",
+      "Target": "Data/SpecialOrders",
+      "Entries": { 
+        "Ruanmei": {
+          "Name": "[Ruanmei_Name]",
+          "Requester": "Ruanmei",
+          "Duration": "TwoWeeks",
+          "RequiredTags": "knows_Ruanmei",
+          "Repeatable": "False",
+          "OrderType": "",
+          "SpecialRule": "",
+          "Text": "[Ruanmei_Text]",
+          "ItemToRemoveOnEnd": null,
+          "MailToRemoveOnEnd": null,
+          "RandomizedElements": null,
+          "Objectives": [
+            {
+              "Type": "Deliver",
+              "Text": "[Ruanmei_Objective_1_Text]",
+              "RequiredCount": 1,
+              "Data": {
+                "AcceptedContextTags": "item_Magic_Rock_Candy",
+                "TargetName": "Ruanmei"
+              }
+            }
+          ],
+          "Rewards": [
+            {
+              "Type": "Money",
+              "Data": { "Amount": "5000"}
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Strings/SpecialOrderStrings",
+      "Entries": {
+        "Ruanmei_Name": "{{i18n:string.specialQuest.ruanmei.name}}",
+        "Ruanmei_Text": "{{i18n:string.specialQuest.ruanmei.text}}",
+        "Ruanmei_Objective_1_Text": "{{i18n:string.specialQuest.ruanmei.objectiveText}}"
+      }
+    },
+     {
+        "Action": "EditData",
+        "Target": "Data/Mail",
+        "Entries": {
+          "Magicqiubang": "[letterbg 3] @{{i18n:letter.mail.Ruanmei_qiubang.1}}^{{i18n:letter.mail.Ruanmei_qiubang.2}}^^{{i18n:letter.mail.Ruanmei_qiubang.3}}%item object qiubang 1 %%[#]{{i18n:letter.mail.Ruanmei_qiubang.4}}"
+        } 
+      },
+      {
+          "Action": "EditData",
+          "Target": "Data/TriggerActions", 
+          "Entries": {
+              "MagicqiubangMail":{ 
+                  "Id": "MagicqiubangMail", 
+                  "Trigger": "DayEnding", 
+                  "Condition": "PLAYER_SPECIAL_ORDER_COMPLETE Current Ruanmei",
+                  "Action": "AddMail Current Magicqiubang tomorrow"} 
+              }
+            },
+            {
+      "Action": "EditData",
+      "Target": "Data/ExtraDialogue",
+      "Entries": {
+        "SummitEvent_Dialogue3_Ruanmei": "@{{i18n:SummitEvent_Dialogue3_Ruanmei.1}}$1\"/emote Ruanmei 20/pause 1000/speak Ruanmei \"{{i18n:SummitEvent_Dialogue3_Ruanmei.2}}$2#$b#{{i18n:SummitEvent_Dialogue3_Ruanmei.3}}#$b#{{i18n:SummitEvent_Dialogue3_Ruanmei.4}}$6\"" 
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "Ruanmei": "{{i18n:string.gisttase.ruanmei.normal.1}}/66 107 413 454 766 767 768 769 857 114 208 233 348 604 680 724 733 851 437 439 876 Book_Mystery/{{i18n:string.gisttase.ruanmei.normal.2}}/96 97 98 99 103 104 108 109 116 118 121 122 126 127 269 305 557 577 579 580 581 582 583 584 585 586 587 588 589 796 799 376/{{i18n:string.gisttase.ruanmei.normal.3}}/373 395/{{i18n:string.gisttase.ruanmei.normal.4}}/203 253 282/{{i18n:string.gisttase.ruanmei.normal.5}}/78 166 156 288 296 308 337 386 399 466 787 795 889/" 
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "Ruanmei": "{{i18n:string.gifttaste.ruanmei.1}}/66 107 413 454 766 767 768 769 857 114 208 233 348 604 680 724 733 851 437 439 876 Book_Mystery/{{i18n:string.gifttaste.ruanmei.2}}/96 97 98 99 103 104 108 109 116 118 121 122 126 127 269 305 557 577 579 580 581 582 583 584 585 586 587 588 589 796 799 376/{{i18n:string.gifttaste.ruanmei.3}}/373 395/{{i18n:string.gifttaste.ruanmei.4}}/203 253 282/{{i18n:string.gifttaste.ruanmei.5}}/78 166 156 288 296 308 337 386 399 466 787 795 889/" 
+      },
+      "When": {
+        "Relationship:Ruanmei": "Married" 
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/ExtraDialogue",
+      "Entries": {
+        "Mines_PlayerKilled_Spouse_PlayerMale": "{{i18n:string.playerkilled.ruanmei.1}}" 
+      },
+      "When": {
+        "Relationship:Ruanmei": "Married"
+      }
+    },   
+    {
+      "Action": "EditData",
+      "Target": "Characters/Dialogue/rainy",
+      "Entries": {
+        "Ruanmei0": "{{i18n:string.rainday.ruanmei.1}}",
+        "Ruanmei1": "{{i18n:string.rainday.ruanmei.2}}"
+      }
+    },
+    
+    {
+      "Action": "EditData",
+      "Target": "Strings/StringsFromCSFiles",
+      "Entries": {
+        "Ruanmei_Engaged": "{{i18n:string.engaged.ruanmei}}"
+       }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/EngagementDialogue",
+      "Entries": {
+        "Ruanmei0": "{{i18n:string.engagement.ruanmei.1}}",
+        "Ruanmei1": "{{i18n:string.engagement.ruanmei.2}}"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Strings/Characters",
+      "Entries": {
+        "MovieInvite_Invited_Ruanmei": "{{i18n:string.movieinvite.ruanmei.1}}",
+        "MovieInvite_Spouse_Ruanmei": "{{i18n:string.movieinvite.ruanmei.2}}"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/animationDescriptions", 
+      "When": {
+        "Spouse": "ruanmei" 
+      },
+      "Entries": {
+        "ruanmei_sleep": "51/51/51" 
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Maps/Custom_RuanmeiSpouseRoom", 
+      "FromFile": "Assets/Maps/SpouseRooms/RuanmeiSpouseRoom.tmx" 
+    },
+    {
+      "Action": "Load",
+      "Target": "Maps/Ruanmei_Spouse_Area", 
+      "FromFile": "Assets/Maps/SpouseRooms/Ruanmei_Spouse_Area.tbin" 
+    },
+    {
+      "LogName": "Sprites",
+      "Action": "Load",
+      "Target": "Characters/Ruanmei",
+      "FromFile": "assets/Image/sprites.png" 
+    },
+    {
+      "LogName": "Portraits",
+      "Action": "Load",
+      "Target": "Portraits/Ruanmei",
+      "FromFile": "assets/Image/Ruanmei.png" 
+    },
+    {
+      "LogName": "Dialogue",
+      "Action": "Load",
+      "Target": "Characters/Dialogue/Ruanmei",
+      "FromFile": "assets/Dialogue/RuanmeiDialogue.json",
+      "When": { "Language": "zh" }
+      // "Priority": "High"
+    },
+    {
+      "LogName": "Dialogue",
+      "Action": "Load",
+      "Target": "Characters/Dialogue/Ruanmei",
+      "FromFile": "i18n/RuanmeiDialogue_en.json",
+      "When": { "Language": "en" }
+      // "Priority": "High"
+    },
+    {
+      "LogName": "Dialogue",
+      "Action": "Load",
+      "Target": "Characters/Dialogue/Ruanmei",
+      "FromFile": "i18n/RuanmeiDialogue_ja.json",
+      "When": { "Language": "ja" }
+      // "Priority": "High"
+    },
+    {
+      "LogName": "Dialogue",
+      "Action": "Load",
+      "Target": "Characters/Dialogue/Ruanmei",
+      "FromFile": "assets/Dialogue/RuanmeiDialogue.json",
+      "Priority": "Low"
+    },
+    {
+      "LogName": "Dialogue",
+      "Action": "Load",
+      "Target": "Characters/Dialogue/MarriageDialogueRuanmei",
+      "FromFile": "assets/Dialogue/RuanmeiMarriageDialogue.json",
+      "When": { "Language": "zh" }
+      // "Priority": "High"
+    },
+    {
+      "LogName": "Dialogue",
+      "Action": "Load",
+      "Target": "Characters/Dialogue/MarriageDialogueRuanmei",
+      "FromFile": "i18n/RuanmeiMarriageDialogue_en.json",
+      "When": { "Language": "en" }
+      // "Priority": "High"
+    },
+    {
+      "LogName": "Dialogue",
+      "Action": "Load",
+      "Target": "Characters/Dialogue/MarriageDialogueRuanmei",
+      "FromFile": "i18n/RuanmeiMarriageDialogue_ja.json",
+      "When": { "Language": "ja" }
+      // "Priority": "High"
+    },
+    {
+      "LogName": "Dialogue",
+      "Action": "Load",
+      "Target": "Characters/Dialogue/MarriageDialogueRuanmei",
+      "FromFile": "assets/Dialogue/RuanmeiMarriageDialogue.json",
+      "Priority": "Low"
+    },
+    {
+      "LogName": "Schedule",
+      "Action": "Load",
+      "Target": "Characters/schedules/Ruanmei",
+      "FromFile": "assets/Schedule/schedule1.json", 
+      "when": {
+        "HasSeenEvent |contains=102423": false
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Characters/schedules/Ruanmei",
+      "FromFile": "assets/Schedule/schedule2.json", 
+      "when": {
+        "HasSeenEvent |contains=102423": true
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Strings/schedules/Ruanmei",
+      "FromFile": "assets/Schedule/ScheduleDialogueRuanmei.json",
+      "When": { "Language": "zh" },
+      "Priority": "High"
+    },
+    {
+      "Action": "Load",
+      "Target": "Strings/schedules/Ruanmei",
+      "FromFile": "i18n/ScheduleDialogueRuanmei_en.json",
+       "When": { "Language": "en" },
+       "Priority": "High"
+    },
+    {
+      "Action": "Load",
+      "Target": "Strings/schedules/Ruanmei",
+      "FromFile": "i18n/ScheduleDialogueRuanmei_ja.json",
+       "When": { "Language": "ja" },
+       "Priority": "High"
+    },
+    {
+      "Action": "Load",
+      "Target": "Strings/schedules/Ruanmei",
+      "FromFile": "assets/Schedule/ScheduleDialogueRuanmei.json",
+      "Priority": "Low"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Strings/StringsFromMaps",
+      "Entries": {
+          "ruanmeiroom.1": "{{i18n:strings.frommaps.ruanmeiroom.1}}",
+          "ruanmeiroom.2": "{{i18n:strings.frommaps.ruanmeiroom.2}}",
+          "ruanmeiroom.3": "{{i18n:strings.frommaps.ruanmeiroom.3}}",
+          "ruanmeiroom.4": "{{i18n:strings.frommaps.ruanmeiroom.4}}",
+          "ruanmeiroom.6": "{{i18n:strings.frommaps.ruanmeiroom.6}}",
+          "ruanmeiroom.7": "{{i18n:strings.frommaps.ruanmeiroom.7}}",
+          "ruanmeiroom.5": "{{i18n:strings.frommaps.ruanmeiroom.5}}"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/ConcessionTastes",
+      "Entries": {
+        "Name": "Ruanmei",
+        "LovedTags": [
+          "Gourmet",
+          "Sweet",
+          "Healthy"
+        ],
+        "LikedTags": [
+          "Drink",
+          "Hot"
+        ],
+        "DislikedTags": [
+          "Burger",
+          "Sour"
+        ]
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/MoviesReactions",
+      "Entries": {
+        "Ruanmei": { 
+          "NPCName": "Ruanmei", 
+          "Reactions": [
+            {
+              "Tag": "spring_movie_0", 
+              "Response": "like", 
+              "Whitelist": [],
+              "SpecialResponses": {
+                "BeforeMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:movie.spring_movie_0.1}}"
+                },
+                "DuringMovie": {
+                  "ResponsePoint": null,
+                  "Script": "", 
+                  "Text": "{{i18n:movie.spring_movie_0.2}}" 
+                },
+                "AfterMovie": {
+                  "ResponsePoint": null,
+                  "Script": "/message \"{{i18n:movie.spring_movie_0.3}}\"",
+                  "Text": "{{i18n:movie.spring_movie_0.4}}" 
+                }
+              },
+              "ID": "reaction_0"
+            },
+            {
+              "Tag": "summer_movie_0",
+              "Response": "dislike",
+              "Whitelist": [],
+              "SpecialResponses": {
+                "BeforeMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:movie.summer_movie_0.1}}"
+                },
+                "DuringMovie": {
+                  "ResponsePoint": null,
+                  "Script": "/shake Ruanmei 500/pause 500/message \"{{i18n:movie.summer_movie_0.2}}\"",
+                  "Text": "……Zzz$8"
+                },
+                "AfterMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:movie.summer_movie_0.3}}"
+                }
+              },
+              "ID": "reaction_1"
+            },
+            {
+              "Tag": "fall_movie_0",
+              "Response": "love",
+              "Whitelist": [],
+              "SpecialResponses": {
+                "BeforeMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:movie.fall_movie_0.1}}?$1"
+                },
+                "DuringMovie": {
+                  "ResponsePoint": null,
+                  "Script": "/message \"{{i18n:movie.fall_movie_0.2}}\"",
+                  "Text": "{{i18n:movie.fall_movie_0.3}}"
+                },
+                "AfterMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:movie.fall_movie_0.4}}$3#$b#{{i18n:movie.fall_movie_0.5}}"
+                }
+              },
+              "ID": "reaction_2"
+            },
+            {
+              "Tag": "winter_movie_0",
+              "Response": "like",
+              "Whitelist": [],
+              "SpecialResponses": {
+                "BeforeMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:movie.winter_movie_0.1}}$2"
+                },
+                "DuringMovie": {
+                  "ResponsePoint": null,
+                  "Script": "/message \"{{i18n:movie.winter_movie_0.2}}\"",
+                  "Text": "{{i18n:movie.winter_movie_0.3}}"
+                },
+                "AfterMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:movie.winter_movie_0.4}}"
+                }
+              },
+              "ID": "reaction_3"
+            },
+            {
+              "Tag": "spring_movie_1",
+              "Response": "love",
+              "Whitelist": [],
+              "SpecialResponses": {
+                "BeforeMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:movie.spring_movie_1.1}}"
+                },
+                "DuringMovie": {
+                  "ResponsePoint": null,
+                  "Script": "/message \"{{i18n:movie.spring_movie_1.2}}\"",
+                  "Text": "{{i18n:movie.spring_movie_1.3}}$1"
+                },
+                "AfterMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:movie.spring_movie_1.4}}$1"
+                }
+              },
+              "ID": "reaction_4"
+            },
+            {
+              "Tag": "summer_movie_1",
+              "Response": "like",
+              "Whitelist": [],
+              "SpecialResponses": {
+                "BeforeMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:movie.summer_movie_1.1}}#$b#{{i18n:movie.summer_movie_1.2}}"
+                },
+                "DuringMovie": {
+                  "ResponsePoint": null,
+                  "Script": "/message \"{{i18n:movie.summer_movie_1.3}}\"",
+                  "Text": "{{i18n:movie.summer_movie_1.4}}"
+                },
+                "AfterMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:movie.summer_movie_1.5}}$2"
+                }
+              },
+              "ID": "reaction_5"
+            },
+            {
+              "Tag": "fall_movie_1",
+              "Response": "like",
+              "Whitelist": [],
+              "SpecialResponses": {
+                "BeforeMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:movie.fall_movie_1.1}}"
+                },
+                "DuringMovie": {
+                  "ResponsePoint": null,
+                  "Script": "/message \"{{i18n:movie.fall_movie_1.2}}\"",
+                  "Text": "{{i18n:movie.fall_movie_1.3}}$1"
+                },
+                "AfterMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:movie.fall_movie_1.4}}"
+                }
+              },
+              "ID": "reaction_6"
+            },
+            {
+              "Tag": "winter_movie_1",
+              "Response": "dislike",
+              "Whitelist": [],
+              "SpecialResponses": {
+                "BeforeMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:movie.winter_movie_1.1}}"
+                },
+                "DuringMovie": {
+                  "ResponsePoint": null,
+                  "Script": "/message \"{{i18n:movie.winter_movie_1.2}}\"",
+                  "Text": "{{i18n:movie.winter_movie_1.3}}"
+                },
+                "AfterMovie": {
+                  "ResponsePoint": null,
+                  "Script": "",
+                  "Text": "{{i18n:movie.winter_movie_1.4}}$7"
+                }
+              },
+              "ID": "reaction_7"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "data/festivals/spring13",
+      "Entries": {
+        "Ruanmei": "{{i18n:festival.spring13.1}}", 
+        "Ruanmei_spouse": "{{i18n:festival.spring13.2}}" 
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Festivals/spring13",
+      "TextOperations": [
+        {
+          "Operation": "Append",
+          "Target": [
+            "Entries",
+            "Set-Up_additionalCharacters"
+          ],
+          "Value": "Ruanmei 22 72 2", 
+          "Delimiter": "/"
+        },
+         {
+          "Operation": "Append",
+          "Target": [
+            "Entries",
+            "MainEvent_additionalCharacters"
+          ],
+          "Value": "Ruanmei 25 60 1", 
+          "Delimiter": "/"
+        }
+      ]
+    },
+    {
+      "Action": "EditData",
+      "Target": "data/festivals/spring24",
+      "Entries": {
+        "Ruanmei": "{{i18n:festival.spring24.1}}", 
+        "Ruanmei_spouse": "{{i18n:festival.spring24.2}}"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Festivals/spring24",
+      "TextOperations": [
+        {
+          "Operation": "Append",
+          "Target": [
+            "Entries",
+            "Set-Up_additionalCharacters"
+          ],
+          "Value": "Ruanmei 6 34 2", 
+          "Delimiter": "/"
+        },
+             {
+          "Operation": "Append",
+          "Target": [
+            "Entries",
+            "MainEvent_additionalCharacters"
+          ],
+          "Value": "Ruanmei 4 35 1", 
+          "Delimiter": "/"
+        }
+      ]
+    },
+      {
+      "Action": "EditData",
+      "Target": "data/festivals/summer11",
+      "Entries": {
+        "Ruanmei": "{{i18n:festival.summer11.1}}",
+        "Ruanmei_spouse": "{{i18n:festival.summer11.2}}"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Festivals/summer11",
+      "TextOperations": [
+        {
+          "Operation": "Append",
+          "Target": [
+            "Entries",
+            "Set-Up_additionalCharacters"
+          ],
+          "Value": "Ruanmei 9 14 3",
+          "Delimiter": "/"
+        },
+         {
+          "Operation": "Append",
+          "Target": [
+            "Entries",
+            "MainEvent_additionalCharacters"
+          ],
+          "Value": "Ruanmei 29 10 2", 
+          "Delimiter": "/"
+        }
+      ]
+    },
+    {
+      "Action": "EditData",
+      "Target": "data/festivals/summer28",
+      "Entries": {
+        "Ruanmei": "{{i18n:festival.1041.1}}",
+        "Ruanmei_spouse": "{{i18n:festival.1041.2}}"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Festivals/summer28",
+      "TextOperations": [
+        {
+          "Operation": "Append",
+          "Target": [
+            "Entries",
+            "Set-Up_additionalCharacters"
+          ],
+          "Value": "Ruanmei 25 36 2",
+          "Delimiter": "/"
+        },
+         {
+          "Operation": "Append",
+          "Target": [
+            "Entries",
+            "MainEvent_additionalCharacters"
+          ],
+          "Value": "Ruanmei 26 36 2", 
+          "Delimiter": "/"
+        }
+      ]
+    },
+    {
+      "Action": "EditData",
+      "Target": "data/festivals/fall16",
+      "Entries": {
+        "Ruanmei": "{{i18n:festival.1073.1}}",
+        "Ruanmei_spouse": "{{i18n:festival.1073.2}}"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Festivals/fall16",
+      "TextOperations": [
+        {
+          "Operation": "Append",
+          "Target": [
+            "Entries",
+            "Set-Up_additionalCharacters"
+          ],
+          "Value": "Ruanmei 45 63 0",
+          "Delimiter": "/"
+        },
+         {
+          "Operation": "Append",
+          "Target": [
+            "Entries",
+            "MainEvent_additionalCharacters"
+          ],
+          "Value": "Ruanmei 45 63 0", 
+          "Delimiter": "/"
+        }
+      ]
+    },
+    {
+      "Action": "EditData",
+      "Target": "data/festivals/fall27",
+      "Entries": {
+        "Ruanmei": "{{i18n:festival.1105.1}}",
+        "Ruanmei_spouse": "{{i18n:festival.1105.2}}"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Festivals/fall27",
+      "TextOperations": [
+        {
+          "Operation": "Append",
+          "Target": [
+            "Entries",
+            "Set-Up_additionalCharacters"
+          ],
+          "Value": "Ruanmei 27 54 2",
+          "Delimiter": "/"
+        },
+         {
+          "Operation": "Append",
+          "Target": [
+            "Entries",
+            "MainEvent_additionalCharacters"
+          ],
+          "Value": "Ruanmei 27 54 2", 
+          "Delimiter": "/"
+        }
+      ]
+    },
+    {
+      "Action": "EditData",
+      "Target": "data/festivals/winter8",
+      "Entries": {
+        "Ruanmei": "{{i18n:festival.1137.1}}",
+        "Ruanmei_spouse": "{{i18n:festival.1137.2}}"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Festivals/winter8",
+      "TextOperations": [
+        {
+          "Operation": "Append",
+          "Target": [
+            "Entries",
+            "Set-Up_additionalCharacters"
+          ],
+          "Value": "Ruanmei 59 52 2",
+          "Delimiter": "/"
+        },
+         {
+          "Operation": "Append",
+          "Target": [
+            "Entries",
+            "Main-Event_additionalCharacters"
+          ],
+          "Value": "Ruanmei 65 42 0", 
+          "Delimiter": "/"
+        }
+      ]
+    },
+    {
+      "Action": "EditData",
+      "Target": "data/festivals/winter25",
+      "Entries": {
+        "Ruanmei": "{{i18n:festival.1170.1}}",
+        "Ruanmei_spouse": "{{i18n:festival.1170.2}}"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Festivals/winter25",
+      "TextOperations": [
+        {
+          "Operation": "Append",
+          "Target": [
+            "Entries",
+            "Set-Up_additionalCharacters"
+          ],
+          "Value": "Ruanmei 25 67 2",
+          "Delimiter": "/"
+        }
+      ]
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/animationdescriptions",
+      "Entries": {
+  "Ruanmei_read": "20/20 20 20 20 20 20 20 20 20 20 20 20 20 21 21 21 21 21 21 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20/20",
+ "ruanmei_sleep": "51/51/51",
+ "Ruanmei_view": "16/16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 17 17 17 17 17 17 17 17 17 17 17 17 17 17 18 18 18 18 18 18 17 17 17 17 17 19 19 19 19 19 19 19 19 16 16 16 16 16 16 16 16 16 16 16 16/16",
+ "Ruanmei_eat": "32/32 32 32 32 32 32 32 32 32 32 32 32 32 32 33 33 33 33 34 34 34 34 34 34 34 34 34 34 35 35 35 35 35 35 35 35 35 35 35 33 33 33 32 32 32 32 32 32/32"
+      }
+    },  
+    {
+      "Action": "EditData",
+      "Target": "Data/Events/Forest", 
+      "Entries": {
+        "102423/j 4/t 600 1600/e 112/w sunny/g female": "spring1/23 16/farmer 32 15 3 Ruanmei 14 15 1/animate Ruanmei false true 600 26 26/pause 1500/skippable/move farmer -3 0 3/emote farmer 16/message \"{{i18n: event.102423.message.1}}\"/move farmer -14 0 3/pause 500/message \"{{i18n: event.102423.message.2}}\"/emote Ruanmei 24/pause 1500/speak Ruanmei \"{{i18n: event.102423.Ruanmei.dialogue.1}}\"/emote farmer 28/message \"{{i18n: event.102423.message.3}}\"/pause 500/message \"……\"/message \"{{i18n: event.102423.message.4}}\"/emote Ruanmei 36/stopAnimation Ruanmei 26/globalFade/viewport -10000 -10000/faceDirection Ruanmei 1/pause 500/viewport 20 16/pause 500/emote Ruanmei 8/pause 500/speak Ruanmei \"{{i18n: event.102423.Ruanmei.dialogue.2}}\"/message \"{{i18n: event.102423.message.6}}\"/pause 500/speak Ruanmei \"{{i18n: event.102423.Ruanmei.dialogue.3}}\"/pause 500/emote farmer 20/message \"{{i18n: event.102423.message.7}}\"/pause 500/speak Ruanmei \"{{i18n: event.102423.Ruanmei.dialogue.4}}\"//move farmer 0 2 1/move farmer 5 0 1/end"
+        }
+      },
+    {"Action": "EditData",
+      "Target": "Data/Events/CommunityCenter",
+      "Entries": {
+        "102425/j 4/t 600 2400/g female/f Ruanmei 500": "spring3/33 14/farmer 33 22 0 Ruanmei 33 9 0/pause 1500/skippable/move farmer 0 -5 0/emote farmer 16/message \"{{i18n:event.102425.message.1}}\"/move Ruanmei 4 0 1/animate Ruanmei false true 600 16 17 19 16/pause 500/emote farmer 8/message \"{{i18n:event.102425.message.2}}\"/emote Ruanmei 12/move farmer 0 -7 0/move farmer 4 0 0/pause 500/message \"{{i18n:event.102425.message.3}}\"/stopAnimation Ruanmei 17/emote Ruanmei 16/jump Ruanmei/faceDirection Ruanmei 2/speak Ruanmei \"{{i18n:event.102425.message.4}}\"/message \"{{i18n:event.102425.message.5}}\"/speak Ruanmei \"{{i18n:event.102425.message.6}}\"/message \"{{i18n:event.102425.message.7}}\"/pause 500/speak Ruanmei \"{{i18n:event.102425.message.8}}\"/pause 500/message \"{{i18n:event.102425.message.9}}\"/pause 500/speak Ruanmei \"{{i18n:event.102425.message.10}}\"/emote farmer 16/message \"{{i18n:event.102425.message.11}}\"/emote Ruanmei 20/speak Ruanmei \"{{i18n:event.102425.message.12}}\"/emote farmer 32/message \"{{i18n:event.102425.message.13}}\"/speak Ruanmei \"{{i18n:event.102425.message.14}}\"/emote farmer 56/speak Ruanmei \"{{i18n:event.102425.message.15}}\"/move Ruanmei -1 0 1/move Ruanmei 0 6 2/end"
+      } 
+    },
+      {"Action": "EditData",
+      "Target": "Data/Events/Mountain",
+      "Entries": {
+       "102426/j 4/t 1400 2200/g female/f Ruanmei 1000": "fall2/62 10/farmer 54 7 2 Ruanmei 63 12 2/skippable/animate Ruanmei false true 600 20 20/pause 1500/move farmer 8 0 1/move farmer 0 5 1/emote farmer 8/message \"{{i18n:event.102426.message.1}}\"/stopAnimation Ruanmei 20/faceDirection Ruanmei 3/speak Ruanmei \"{{i18n:event.102426.message.2}}\"/emote farmer 8/speak Ruanmei \"{{i18n:event.102426.message.3}}\"/message \"{{i18n:event.102426.message.4}}\"/speak Ruanmei \"$6{{i18n:event.102426.message.5}}\"/message \"{{i18n:event.102426.message.6}}\"/speak Ruanmei \"{{i18n:event.102426.message.7}}\"/question fork0 \"#{{i18n:event.102426.message.81}}#{{i18n:event.102426.message.82}}\"/fork eventid/pause 500/speak Ruanmei \"{{i18n:event.102426.message.9}}\"/emote farmer 20/message \"{{i18n:event.102426.message.10}}\"/pause 500/speak Ruanmei \"{{i18n:event.102426.message.11}}\"/end",
+       "eventid":"speak Ruanmei \"{{i18n:event.102426.message.12}}\"/emote farmer 32/pause 500/speak Ruanmei \"{{i18n:event.102426.message.13}}\"/message \"{{i18n:event.102426.message.14}}\"/end"
+      } 
+    },
+     {"Action": "EditData",
+      "Target": "Data/Events/ArchaeologyHouse",
+      "Entries": {
+       "eventid":"speak Ruanmei \"{{i18n:event.102427_2.message.1}}\"/message \"{{i18n:event.102427_2.message.2}}\"/emote farmer 8/message \"{{i18n:event.102427_2.message.3}}\"/pause 500/end"
+      } 
+     },
+     {"Action": "EditData",
+      "Target": "Data/Events/Town",
+      "Entries": {
+       "102427/j 4/t 1100 1700/g female/f Ruanmei 1500": "Saloon1/92 95/farmer 86 98 1 Vincent 88 98 3 Jas 87 97 2 Ruanmei 77 94 0/skippable/move Ruanmei 11 0 1/emote farmer 16/faceDirection farmer 0/emote farmer 32/message \"{{i18n:event.102427_1.message.1}}\"/faceDirection Ruanmei 2/emote Ruanmei 8/speak Ruanmei \"{{i18n:event.102427_1.message.2}}\"/emote farmer 8/speak Vincent \"{{i18n:event.102427_1.message.3}}\"/speak Jas \"{{i18n:event.102427_1.message.4}}\"/faceDirection farmer 1/emote farmer 8/speak Jas \"{{i18n:event.102427_1.message.5}}\"/speak Vincent \"{{i18n:event.102427_1.message.6}}\"/speak Ruanmei \"{{i18n:event.102427_1.message.7}}\"/message \"{{i18n:event.102427_1.message.8}}\"/move Ruanmei 6 0 0 true/message \"{{i18n:event.102427_1.message.9}}\"/globalFade/viewport -10000 -10000/pause 500/changeLocation ArchaeologyHouse/viewport 17 9/warp Ruanmei 17 5/warp farmer 14 8/faceDirection farmer 0/pause 500/move farmer 0 -3 0/move farmer 2 0 1/message \"{{i18n:event.102427_1.message.10}}\"/faceDirection Ruanmei 3/question fork0 \"{{i18n:event.102427_1.message.11}}#{{i18n:event.102427_1.message.12}}#{{i18n:event.102427_1.message.13}}#{{i18n:event.102427_1.message.14}}\"/fork eventid/pause 500/speak Ruanmei \"{{i18n:event.102427_1.message.15}}\"/message \"{{i18n:event.102427_1.message.16}}\"/speak Ruanmei \"{{i18n:event.102427_1.message.17}}\"/emote farmer 12/message \"{{i18n:event.102427_1.message.18}}\"/speak Ruanmei \"{{i18n:event.102427_1.message.19}}\"/message \"{{i18n:event.102427_1.message.20}}\"/emote Ruanmei 20/pause 500/end",
+       "eventid":"speak Ruanmei \"{{i18n:event.102427_2.message.1}}\"/message \"{{i18n:event.102427_2.message.2}}\"/emote farmer 8/message \"{{i18n:event.102427_2.message.3}}\"/pause 500/end"
+      } 
+    },
+     {
+            "Action": "Load",
+            "Target": "Data/Events/Custom_wurenzhidi", 
+            "FromFile": "assets/XNB/Event.xnb" 
+          },
+     {"Action": "EditData",
+      "Target": "Data/Events/Custom_wurenzhidi",
+      "Entries": {
+       "102428/j 4/t 1700 2500/g female/f Ruanmei 2000": "woodsTheme/18 14/farmer 18 14 1 Ruanmei -3000 -3000 2/skippable/pause 300/addTemporaryActor bat 16 32 19 14 3 true Monster/animate bat false true 500 1 2 3/playSound batScreech/animate farmer false true 100 30 31 32 33 34 35/pause 700/specificTemporarySprite swordswipe 19 14/playSound swordswipe/playSound rockGolemHit/stopAnimation farmer 1/warp bat -100 -100/stopAnimation farmer 30/message \"{{i18n:event.102428.message.1}}\"/message \"{{i18n:event.102428.message.2}}\"/emote farmer 32/message \"{{i18n:event.102428.message.3}}\"/move farmer 2 0 0/move farmer 0 -2 0/playSound doorOpen/warp Ruanmei 20 11/emote Ruanmei 8/speak Ruanmei \"{{i18n:event.102428.message.4}}\"/emote farmer 20/message \"{{i18n:event.102428.message.5}}\"/message \"{{i18n:event.102428.message.6}}\"/message \"{{i18n:event.102428.message.7}}\"/emote Ruanmei 16/emote Ruanmei 12/emote farmer 56/message \"{{i18n:event.102428.message.8}}\"/message \"{{i18n:event.102428.message.9}}！\"/emote Ruanmei 8/message \"{{i18n:event.102428.message.10}}\"/speak Ruanmei \"{{i18n:event.102428.message.11}}\"/message \"{{i18n:event.102428.message.12}}\"/emote Ruanmei 8/speak Ruanmei \"{{i18n:event.102428.message.13}}\"/emote farmer 16/message \"{{i18n:event.102428.message.14}}\"/message \"{{i18n:event.102428.message.15}}\"/speak Ruanmei \"{{i18n:event.102428.message.16}}\"/message \"{{i18n:event.102428.message.17}}\"/speak Ruanmei \"{{i18n:event.102428.message.18}}\"/message \"{{i18n:event.102428.message.19}}\"/message \"{{i18n:event.102428.message.20}}\"/emote Ruanmei 40/speak Ruanmei \"{{i18n:event.102428.message.21}}\"/emote farmer 12/speak Ruanmei \"{{i18n:event.102428.message.22}}\"/emote farmer 16/jump farmer/message \"{{i18n:event.102428.message.23}}\"/speak Ruanmei \"{{i18n:event.102428.message.24}}\"/message \"{{i18n:event.102428.message.25}}\"/message \"{{i18n:event.102428.message.26}}\"/pause 300/end"
+      } 
+    },
+    {"Action": "EditData",
+      "Target": "Data/Events/Woods",
+      "Entries": {
+       "102429/j 4/t 2000 2500/g female/f Ruanmei 2500": "woodsTheme/31 14/farmer 36 14 3 Ruanmei 30 10 2/skippable//animate Ruanmei false true 600 26 26/pause 300/move farmer -5 0 0/emote farmer 8/faceDirection farmer 0/emote Ruanmei 24/message \"{{i18n:event.102429.message.1}}\"/move farmer 0 -3 0/message \"{{i18n:event.102429.message.2}}\"/globalFade/viewport -10000 -10000/changeLocation Custom_STAR1/viewport 22 11/pause 1500/message \"{{i18n:event.102429.message.3}}\"/message \"{{i18n:event.102429.message.4}}\"/message \"{{i18n:event.102429.message.5}}\"/message \"……\"/message \"{{i18n:event.102429.message.6}}\"/message \"{{i18n:event.102429.message.7}}\"/speak Ruanmei \"{{i18n:event.102429.message.8}}\"/message \"{{i18n:event.102429.message.9}}\"/message \"{{i18n:event.102429.message.10}}\"/message \"{{i18n:event.102429.message.11}}\"/message \"{{i18n:event.102429.message.12}}\"/speak Ruanmei \"{{i18n:event.102429.message.13}}\"/message \"{{i18n:event.102429.message.14}}\"/message \"{{i18n:event.102429.message.15}}\"/message \"{{i18n:event.102429.message.16}}\"/speak Ruanmei \"{{i18n:event.102429.message.16}}\"/end"
+      } 
+    }
+  ]
+ }

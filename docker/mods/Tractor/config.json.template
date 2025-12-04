@@ -3,10 +3,10 @@
   "TractorSpeed": -2,
   "SoundEffects": "${TRACTOR_SOUNDEFFECTS}",
   "ToolUseSoundLimit": "Default",
-  "SoundEffectsVolume": 75,
+  "SoundEffectsVolume": 50,
   "MagneticRadius": 384,
-  "BuildPrice": 0,
-  "RequireBuildMaterials": false,
+  "BuildPrice": 150000,
+  "RequireBuildMaterials": true,
   "BuildMaterials": {
     "(O)335": 20,
     "(O)337": 5,
@@ -22,7 +22,7 @@
       "CutTreeStumps": true,
       "ClearTreeSeeds": false,
       "ClearTreeSaplings": false,
-      "CutGrownTrees": false,
+      "CutGrownTrees": true,
       "CutTappedTrees": false,
       "CutBushes": false,
       "CutGiantCrops": true,
@@ -105,8 +105,8 @@
     }
   },
   "Controls": {
-    "SummonTractor": "Back",
-    "DismissTractor": "Back",
+    "SummonTractor": "C",
+    "DismissTractor": "C",
     "HoldToActivate": "None",
     "IncreaseDistance": "None",
     "ReduceDistance": "None"

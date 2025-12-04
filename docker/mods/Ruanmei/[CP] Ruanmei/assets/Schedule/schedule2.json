@@ -1,0 +1,15 @@
+{
+	"Mon":"GOTO default",
+    "Wed":"GOTO default",
+	"Tue":"620 Custom_wurenzhidi 11 13 0/840 Beach 25 36 2 Ruanmei_read/1000 Beach 25 36 3/1200 SeedShop 12 25 1/1700 Saloon 9 20 0/2200 Custom_ruanmeiroom 2 11 0 ruanmei_sleep",
+	"Thu":"GOTO default",
+	"Fri":"GOTO default",
+	"Sat":"620 Custom_wurenzhidi 11 13 0/840 Mine 12 8 2 Ruanmei_read/1700 Saloon 3 22 0 Ruanmei_eat \"Strings\\schedules\\Ruanmei:Ruanmei_ea\"/2200 Custom_ruanmeiroom 2 11 0 ruanmei_sleep",
+	"Sun":"GOTO Sat",
+    "rain":"630 Custom_ruanmeiroom 10 7 1 Ruanmei_read/1000 Forest 33 25 2/1300 Saloon 9 20 0/1700 Custom_ruanmeiroom 10 7 1 Ruanmei_read/2000 Custom_ruanmeiroom 2 11 0 ruanmei_sleep",
+    "GreenRain":"630 Custom_ruanmeiroom 10 7 1 Ruanmei_read/800 Forest 33 25 2/1300 Saloon 9 20 0/1800 Forest 33 25 2/2200 Custom_ruanmeiroom 2 11 0 ruanmei_sleep",
+	"default":"620 Custom_wurenzhidi 5 16 2 Ruanmei_read \"Strings\\schedules\\Ruanmei:Ruanmei_book\"/730 Forest 88 49 1 Ruanmei_view \"Strings\\schedules\\Ruanmei:Ruanmei_vie\"/1100 ArchaeologyHouse 19 5 0/1700 Town 90 6 2 Ruanmei_view \"Strings\\schedules\\Ruanmei:Ruanmei_vie\"/2300 Custom_ruanmeiroom 2 11 0 ruanmei_sleep",
+    "marriage_Mon":"900 Forest 88 49 1 Ruanmei_view \"Strings\\schedules\\Ruanmei:Ruanmei_vie\"/1300 Mountain 35 15 2 Ruanmei_read \"Strings\\schedules\\Ruanmei:Ruanmei_book\"/1800 Saloon 3 22 0 Ruanmei_eat \"Strings\\schedules\\Ruanmei:Ruanmei_ea\"/2030 bed",
+    "marriage_Thu":"840 Mine 12 8 2 Ruanmei_read \"Strings\\schedules\\Ruanmei:Ruanmei_book\"/1200 ArchaeologyHouse 19 5 0/1600 Town 90 6 2 Ruanmei_view \"Strings\\schedules\\Ruanmei:Ruanmei_vie\"/2030 bed",
+    "marriage_Fri":"640 Beach 25 36 2 Ruanmei_read/1000 Beach 25 36 3/1200 SeedShop 12 25 1/1700 Saloon 9 20 0/2030 bed"
+     }

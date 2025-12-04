@@ -1,0 +1,12 @@
+{
+    "Name": "Ruan_Mei_s Domesticated Monster",
+    "Author": "z23mua",
+    "Version": "1.0.5",
+    "Description": "阮·梅女士的 小*秘*密 ❤  （感谢Berisan老师的开源代码！）",
+    "UniqueID": "RuanMei_DM",
+    "EntryDll": "Ruan_Mei_s_Domesticated_Monster.dll",
+    "MinimumApiVersion": "4.0",
+    "UpdateKeys": [ "None" ]
+        
+
+}

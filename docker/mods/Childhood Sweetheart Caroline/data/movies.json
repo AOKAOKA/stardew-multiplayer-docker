@@ -1,0 +1,216 @@
+{
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Strings/Characters",
+            "Entries": {
+                "MovieInvite_Invited_Caroline": "{{i18n: CSC.MovieInvitation.{{Random:0,1,2}} }}",
+                "MovieInvite_Spouse_Caroline": "{{i18n: CSC.MovieInvitation.spouse.{{Random:0,1,2,3,4}} }}",
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/MoviesReactions",
+            "Entries": {
+                "Caroline": {
+                        "NPCName": "Caroline",
+                        "Reactions": [
+                        {
+                            "Tag": "spring_movie_0",
+                            "Response": "love",
+                            "Whitelist": [],
+                            "SpecialResponses": {
+                                "BeforeMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Spring.0.Before}}"
+                                },
+                                "DuringMovie": { 
+                                    "ResponsePoint": "sprout_leave",
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Spring.0.During}}"
+                                },
+                                "AfterMovie": { 
+                                    "ResponsePoint": null,
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Spring.0.After}}"
+                                }
+                            },
+                            "Id": "reaction_0"
+                        },
+                        {
+                            "Tag": "spring_movie_1",
+                            "Response": "like",
+                            "Whitelist": [],
+                            "SpecialResponses": {
+                                "BeforeMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Spring.1.Before}}"
+                                },
+                                "DuringMovie": { 
+                                    "ResponsePoint": null,
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Spring.1.During}}"
+                                },
+                                "AfterMovie": { 
+                                    "ResponsePoint": null,
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Spring.1.After}}"
+                                }
+                            },
+                            "Id": "reaction_1"
+                        },
+                        {
+                            "Tag": "summer_movie_0",
+                            "Response": "love",
+                            "Whitelist": [],
+                            "SpecialResponses": {
+                                "BeforeMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Summer.0.Before}}"
+                                },
+                                "DuringMovie": {
+                                    "ResponsePoint": "PK_villain",
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Summer.0.During}}"
+                                },
+                                "AfterMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Summer.0.After}}"
+                                }
+                            },
+                            "Id": "reaction_2"
+                        },
+                        {
+                            "Tag": "summer_movie_1",
+                            "Response": "dislike",
+                            "Whitelist": [],
+                            "SpecialResponses": {
+                                "BeforeMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Summer.1.Before}}"
+                                },
+                                "DuringMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Summer.1.During}}"
+                                },
+                                "AfterMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Summer.1.After}}"
+                                }
+                            },
+                            "Id": "reaction_3"
+                        },
+                        {
+                            "Tag": "fall_movie_0",
+                            "Response": "like",
+                            "Whitelist": [],
+                            "SpecialResponses": {
+                                "BeforeMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Fall.0.Before}}"
+                                },
+                                "DuringMovie": {
+                                    "ResponsePoint": "mysterium_shadow",
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Fall.0.During}}"
+                                },
+                                "AfterMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Fall.0.After}}"
+                                }
+                            },
+                            "Id": "reaction_4"
+                        },
+                        {
+                            "Tag": "fall_movie_1",
+                            "Response": "like",
+                            "Whitelist": [],
+                            "SpecialResponses": {
+                                "BeforeMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Fall.1.Before}}"
+                                },
+                                "DuringMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Fall.1.During}}"
+                                },
+                                "AfterMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Fall.1.After}}"
+                                }
+                            },
+                            "Id": "reaction_5"
+                        },
+                        {
+                            "Tag": "winter_movie_0",
+                            "Response": "like",
+                            "Whitelist": [],
+                            "SpecialResponses": {
+                                "BeforeMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Winter.0.Before}}"
+                                },
+                                "DuringMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Winter.0.During}}"
+                                },
+                                "AfterMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Winter.0.After}}"
+                                }
+                            },
+                            "Id": "reaction_6"
+                        },
+                        {
+                            "Tag": "winter_movie_1",
+                            "Response": "like",
+                            "Whitelist": [],
+                            "SpecialResponses": {
+                                "BeforeMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Winter.1.Before}}"
+                                },
+                                "DuringMovie": {
+                                    "ResponsePoint": "zuzucityexpress_mind_heart",
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Winter.1.During}}"
+                                },
+                                "AfterMovie": {
+                                    "ResponsePoint": null,
+                                    "Script": null,
+                                    "Text": "{{i18n: CSC.Winter.1.After}}"
+                                }
+                            },
+                            "Id": "reaction_7"
+                        }
+                    ]
+                }
+            }
+        }
+        ]
+    }
+    
+                //spring_movie_0 Brave Little Sapling - family, comedy
+                //spring_movie_1 NAtural Wonders - documentary, family
+                //summer_movie_0 Prairie King - action
+                //summer_movie_1 Wumbus - sci-fi, comedy, family
+                //fall_movie_0 Mysterium - horror, art
+                //fall_movie_1 Howls in the rain - horror
+                //winter_movie_0 Miracle at Coldstar Ranch - family, romance
+                //winter_movie_1 Zuzu City Express - classic, romance

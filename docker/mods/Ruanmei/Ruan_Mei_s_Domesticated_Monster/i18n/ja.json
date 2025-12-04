@@ -1,0 +1,24 @@
+{
+  // Boss血条系统-未实装，仅暂留接口，可无视
+  "boss.health-bar.title": "{0} 生命值",
+  "boss.health-bar.health": "{0} / {1}",
+  "boss.health-bar.percentage": "{0}%",
+
+  // 商店系统
+  "shop.purchase.miniruanmei": "ラムの友を慎重に取り扱ってください",
+  "shop.purchase.portrait": "ミス・ルアン・メイの肖像を慎重に取り扱ってください",
+
+  // 血量监控系统
+  "health.low.warning": "ここはまだあなたには早いです、親愛なる友",
+  "health.low.healed": "ミス・ルアン・メイが応急手当を施しました",
+  "health.curse.multiplayer": "ルアン・メイの創造物があなたたちを呪いました",
+  "health.curse.singleplayer": "ルアン・メイの創造物があなたを呪いました",
+
+  // 通用消息
+  "global.wurenzhidi-warning": "このまま去れば　だれもきずつきません！ \n 、(*皿* )",
+
+  //余清涂毒酒系统
+  "YuQingTu.FHpinkCollisionEffect": "あなたは……奇妙な幻覚を感じている？",
+  "YuQingTu.TLDEffect": "力が湧いでくる\n……しかし、何かがおかしい？!"
+
+}

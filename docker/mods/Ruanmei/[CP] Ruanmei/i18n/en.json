@@ -1,0 +1,276 @@
+{
+    //default为中文文件，注释后的文字为中文原文，以供参考
+//{{in18n:Characters.displayName.ruanmei}}
+
+    "Characters.displayName.ruanmei":"Ruan Mei",//阮·梅
+    "item.Miniruanmei.ruanmei.name":"A stuffed animal toy",//奇怪的毛绒玩具
+    "item.Miniruanmei.ruanmei.description":"A stuffed animal that looks like a cat and a pastry, and it's even warm to the touch. Strangely enough, it reminds you of someone.",//像猫又像糕点的毛绒玩具，甚至摸上去还是热的。很奇怪，这让你想起来了一个人。
+
+    "item.Ruanmei_Ruanmei_Portrait.ruanmei.name":"Ruanmei Portrait",//阮·梅的肖像
+    "item.RuanmeiCake.ruanmei.name":"Ruan Mei's cake",//芸豆糕点
+    "item.RuanmeiCake.ruanmei.description":"A cake given to you by Ruan Mei, decorated with deer flowers, look delicious. But they may have a more unique effect?",//阮·梅送给你的糕点，上缀有惊惶鹿花朵，看起来很好吃。但或许会有更加独特的作用？
+    "item.Thepinkestcollision.ruanmei.name":"Thepinkestcollision",//粉红冲撞
+    "item.Thepinkestcollision.ruanmei.description":"A creation gifted to Ruan Mei by her friend. It's very sweet... but the color is almost too vibrant, making one uneasy.",//阮·梅友人赠送给她的作品，很甜……但颜色似乎有些太鲜艳了，让人不安。
+    "item.Thalantoxiflame.ruanmei.name":"Thalantoxiflame",//塔拉毒火焰
+    "item.Thalantoxiflame.ruanmei.description":"Once a bestselling cocktail praised for its superb taste. The reason for its unique flavor, however, remains an unsolved mystery, as those who tasted it took the secret with them.",//曾作为最佳口味鸡尾酒一度畅销，每一位品尝过塔拉毒火焰的生命都不再有机会讲述它的口味。
+
+    "item.qiubang.ruanmei.name":"Galaxy Baseball Bat",//银河球棒
+    "item.qiubang.ruanmei.description":"One of the many collectibles belonging to Ms Herta... Wait, how did you get this?",//黑塔女士的众多收藏品之一……等等，你怎么得到它的？
+
+    "string.specialQuest.ruanmei.name":"Gathering Ingredients",//寻找素材
+    "string.specialQuest.ruanmei.text":"I heard there's a type of candy infused with the mysterious power of Prismatic Shards. If possible, I'd love to taste a Magical Rock Candy ice pop. In return, I'll give her a reward. ^——Ruan Mei",//听说有一种糖果里灌注了五彩碎片的神秘力量，如果可以我想要尝一下魔法糖冰棍的味道，作为回报，我会给她奖励。^——阮·梅
+    "string.specialQuest.ruanmei.objectiveText":"Deliver the Magical Rock Candy ice pop to Ruan Mei.",//将魔法糖冰棍交付给阮·梅。
+  
+
+    "string.gisttase.ruanmei.normal.1":"I'm curious how you knew I was interested in this. $9#$b#Thank you@, you understand me better than I thought.$1",//我很好奇，你怎么知道我对这些感兴趣的。$9#$b#谢谢你@，你比我想象的更了解我。$1
+    "string.gisttase.ruanmei.normal.2":"I like this. It's nice having you around.$6",//我喜欢这个，有你在真好。$6
+    "string.gisttase.ruanmei.normal.3":"...Thank you.",//……谢谢你。
+    "string.gisttase.ruanmei.normal.4":"This is a new subject for me too...$2",//这对我来说也是个新的课题……$2
+    "string.gisttase.ruanmei.normal.5":"Thanks, this looks useful.",//谢谢,这个看起来很有用。
+    "string.gifttaste.ruanmei.1":"Should I try something new? I always feel like I'm being completely guessed at. @, or have you learned some new magic? $1",//我是不是应该尝试些新东西呢,总感觉完全被猜透了。@，还是说你学会了新的魔法？$1
+    "string.gifttaste.ruanmei.2":"Thank you, dear... Would you like a hug? $3",//谢谢你，亲爱的……要来个拥抱吗？$3
+    "string.gifttaste.ruanmei.3":"...Why did you give me this? I thought you knew I didn't like these things.$5",//……为什么送我这个，我以为你知道我不喜欢这些。$5
+    "string.gifttaste.ruanmei.4":"...I should get going.$2",//……我要走了。$2
+    "string.gifttaste.ruanmei.5":"Dear, your ability to find good things has improved again.$3",//亲爱的，你寻找好东西的能力又提高了。$3
+
+    "string.playerkilled.ruanmei.1":"@, did you find anything interesting down there? I found you surrounded by other small creatures. $9#$b#Are you surprised I came here? Of course... your body doesn't belong to you alone.$2",//@，你在那下面是找到了什么有趣的东西吗，我发现你的时候你被其他小生物围在一起。$9#$b#很惊讶我会过来吗？当然……你的身体不是属于你一个人的。$2
+    "string.rainday.ruanmei.1":"When it rains, I should stay home warm... Too bad I still need to check my equipment.",//下雨的时候更应该待在温暖的家里……可惜我还需要去检查设备。
+    "string.rainday.ruanmei.2":"I forgot my umbrella... Whatever, Qingtu won't know.",//忘记带伞了……就这样吧，反正清涂也不知道。
+    "string.engaged.ruanmei":"This thing...$9#$b#@, you might be more popular with those little creatures than I thought, really curious. #$b#I once did a simple physical examination of you, um... when you were brought up, unfortunately, you were normal, I mean, very healthy. ... You can obviously eat those strange things in the mines *mutter. #$b#So I'm embarrassed to say it... Can I live with you? Haha, don't nod so quickly.$6",//这个东西……$9#$b#@，你或许比我想象的更受那些小生命欢迎，真让人好奇。#$b#我曾经简单检测过你的身体，嗯……在你抱上来的时候，很遗憾，你很正常、我是说很健康。……明明在矿洞都可以吃下那些奇怪的东西*嘀咕。#$b#所以说起来不好意思……我可以和你住一起吗？呵呵，不用点头那么快。$6
+    "string.engagement.ruanmei.1":"Test tube... uh, where is the data I wrote... $2#$b#@, can you help me find my book?",//试管……呃、我写的数据放在哪里了……$2#$b#@,你能帮我找一下我的书吗？
+    "string.engagement.ruanmei.2":"Don't be so nervous... Honey, I won't regret it.",//不用这么紧张…….亲爱的，我不会反悔的。
+    "string.movieinvite.ruanmei.1":"Movies? ...Sure. (Silence)#$b#The movie theater here should have popcorn, right? *quietly",//电影？……可以。（沉默）#$b#这里的电影院应该有爆米花吧？*小声
+    "string.movieinvite.ruanmei.2":"(Checking the time) Okay, I want to try some licorice candy this time. $1",//（看时间）好啊，我这次想试试甘草糖。$1
+    "strings.frommaps.ruanmeiroom.1": "The manuscript fell on the ground. It seems to have been forgotten by its owner.",//掉在地上的手稿，看起来已经被主人遗忘了。
+    "strings.frommaps.ruanmeiroom.2":"The scattered piles of books and food give it a more lively feel than a bedroom.",//散落的书堆和食物，比起卧室更有生活气息。
+    "strings.frommaps.ruanmeiroom.3":"There are monsters inside, please stay away.",//里面饲养着怪物，请不要靠近。
+    "strings.frommaps.ruanmeiroom.4":"The instruments and test tubes are so clean. I'm sure the owner put a lot of effort into keeping them tidy.",//擦得干干净净的仪器和试管，想必主人在这个的清洁上下了不少功夫。
+    "strings.frommaps.ruanmeiroom.6":"A sign warning, “Caution, it's dangerous inside.”",//一个警告牌，“你好，里面很危险。”
+    "strings.frommaps.ruanmeiroom.7":"A-Ruan:^Your letters are always welcome.^The other day, I was struck by inspiration and experimented with some new ingredients at the tavern. I casually gifted the creation to a fellow traveler with whom I felt a connection, and it seems she truly enjoyed it. This makes me think the final product turned out quite well. It's a pity you weren't here by my side. ^....I wonder if your journey in search of life's meaning has brought you any revelations. Whatever the case, remember to take plenty of photos and share them with me—I'd love to see the world through your eyes. ^——Yu QingTu",//阿阮：^见字如晤。^前两天偶有所得，在酒馆尝试了些新的材料，随手赠予了合缘的旅人，看起来她很喜欢，如此看来成品似乎不错，可惜你不在我的身边。^……不知你这趟追寻生命的旅途是否有所收获，无论如何记得多拍照片分享给我，让我看看你眼中的世界。^——余清涂
+    "strings.frommaps.ruanmeiroom.5":"Scholars' computers sometimes work here.",//学者的电脑，有时会在这里工作。
+    //跳过了电影。。。。
+
+    //content节日对话
+    "festival.spring13.1":"Who provided these eggs? The patterns are very delicate, it must have taken a lot of effort.",//这些鸡蛋是谁提供的呢……花纹很精细，应该花了不少的精力。
+    "festival.spring13.2":"Is there any fun in an egg hunt? I don't quite understand... Ah, dear, good luck in the competition.",//寻找鸡蛋的比赛有什么乐趣吗？不太懂……啊、亲爱的，比赛加油。
+    "festival.spring24.1":"This custom is very interesting... (recording) Hmm? @, sorry, I just came to take a look.",//这种习俗很有趣……（记录）嗯？@，不好意思我只是过来看看。
+    "festival.spring24.2":"Well... you'll ask me to dance, right? I won't say yes, though. No, I'm not laughing. #$e#... If you really want, I can satisfy you a little when I get home. $6",//嗯……你会邀请我跳舞的对吧，虽然我不会答应。不，我没有笑。#$e#……如果你真的想的话，回家后倒是可以稍微满足你。$6
+    "festival.summer11.1":"I heard the soup at this banquet is delicious. I've been looking forward to it for a long time. $3#$b#...@, why do you look so wired?",//据说这场宴会的汤很好喝，我期待很久了。$3#$b#……@，怎么表情那么奇怪？
+    "festival.summer11.2":"Honey, with that expression on your face, are you going to do something naughty this year, or...? #$b# Well, I'm going to use this to judge my next actions.",//亲爱的，你这副表情，今年是做坏事人格还是说……？#$b#嗯，我要根据这个判断我接下来要做的行为。
+    "festival.1041.1":"Moon jellyfish... I'm very interested in them, such mysterious lifeforms.",//月光水母……我对它们很感兴趣，它们的生命形式很奇特。
+    "festival.1041.2":"These little guys are here this year too... The cycle repeats itself. #$b# Forever pursuing the origin of life.",//这些小家伙今年也来了……周而复始。#$b#永远追寻着生命的起源。
+    "festival.1073.1":"There are lots of fresh fruits available for free tasting at the autumn fair. *Chewing $3",//秋季展览会上有很多可以免费试吃的新鲜水果。*嚼嚼$3
+    "festival.1073.2":"Do you want to eat with me? *Hand it over.[410]",//你要一起吃吗？*递过去[410]
+    "festival.1105.1":"What do you think of keeping a few skeletons in your home... Just kidding. $2#$e#Are you going to invite me to the maze? Unfortunately, I've already been there. There are some interesting ‘elements’ within it.",//你觉得养几个骷髅在家里会怎么样……开玩笑的。$2#$e#你要邀请我一起去迷宫吗？可惜我已经提前去过了，里面有一些有趣的‘元素’。
+    "festival.1105.2":"Do you want to sneak away with me? $3#$b#You want to get the maze reward...Okay, go for it.$2",//要和我一起偷偷溜走吗？$3#$b#你想去拿迷宫奖励啊……那好吧，加油。$2
+    "festival.1137.1":"I really miss the time when I learned winter fishing on the ice with my mother.",//真怀念，我之前和母亲一起在冰面上学过冬钓。
+    "festival.1137.2":"Do you need a hug before the game to warm you up? Just kidding. #$b# Even without this, you're still going to win the game as usual.",//比赛前需要我给你一个拥抱来取暖吗？开玩笑的。#$b#即使没有这个，你也肯定一如既往赢得比赛。
+    "festival.1170.1":"What do you think of candied apples for Christmas?",//你觉得圣诞节吃拔丝苹果怎么样？
+    "festival.1170.2":"Merry Christmas! The best thing about holidays is that we can eat things we can't eat on other days, so what should we eat tonight? $6",//圣诞快乐，节日最大的好处就是可以理所应当地吃一些平时不能吃的东西，所以我们今天晚上吃什么好呢（纠结）。$6
+
+
+    //好感度事件
+    //content.json-1202 event102423 初遇事件——测试完成！
+    "event.102423.message.1": "Someone fainted...!",//有人晕倒了……！
+    "event.102423.message.2": "Wake up! (Shaking) Are you okay?",//醒醒！（摇晃）你还好吗？
+    "event.102423.Ruanmei.dialogue.1": "...(shakes head)...I'll sleep a little longer...Zzz$8",//…（摇头）……我再睡会……Zzz$8
+    "event.102423.message.3": "It seems like I misunderstood…",//好像误会了……
+    "event.102423.message.4": "......",
+    "event.102423.message.5": "...She's really pretty (poke).",//……她真好看（戳）。
+    "event.102423.Ruanmei.dialogue.2": "Uh, hello?$9",//呃、你好？$9
+    "event.102423.message.6": "Hello, I'm a farmer who recently moved to town. It's dangerous for you to sleep alone in the forest.",//你好，我是最近刚搬到镇上来的农夫，你一个人睡在森林里很危险。
+    "event.102423.Ruanmei.dialogue.3": "…Well, thank you.#$b#I'm Ruan Mei, ... giving you this as a thank you[234]。",//……嗯，谢谢你。#$b#我是阮·梅，……作为答谢给你这个[234]。
+    "event.102423.message.7": "You're welcome, I'll get back to work.",//不用谢，那我继续去干活了。
+    "event.102423.Ruanmei.dialogue.4": "Well, bye.",//嗯，再见。
+
+    //content.json-1208 event102425 事件2——待测试
+    "event.102425.message.1":"Ran Mei...?",//阮·梅……？
+    "event.102425.message.2":"Go over and have a look.",//过去看看。
+    "event.102425.message.3":"What are you doing?",//你在做什么？
+    "event.102425.message.4":"!$5#$b#......#$b#@ ah, hello.",//！$5#$b#……#$b#是@啊，你好。
+    "event.102425.message.5":"Did you get scared?",//吓到你了吗？。
+    "event.102425.message.6":"No, just didn't hear your voice.",//没，是我没有听到你的声音。
+    "event.102425.message.7":"What are you doing here?",//你在这里做什么？
+    "event.102425.message.8":"I'm investigating here. Have you heard that strange noise?",//我在调查这里，你有听说过吗？那种奇怪的动静。
+    "event.102425.message.9":"Are you talking about mice?",//你是说老鼠吗？
+    "event.102425.message.10":"No, you should know what I'm talking about. I'm looking for those little guys. #$b#...Forest magic. That's why you saw me last time.",//不，你应该知道我在说什么，我在找那些小家伙。#$b#……森林魔法，你上次能见到我也是因为这个。
+    "event.102425.message.11":"Junimo...?",//祝尼魔……？
+    "event.102425.message.12":"This is their habitat, but they are a little... shy.",//这里是它们的栖息地，但它们有些……害羞。
+    "event.102425.message.13":"You can use something to lure them out!",//可以用一些东西把它们勾引出来！
+    "event.102425.message.14":"Haha, it's just like making bait. $6#$b# But it's indeed a good idea. I'll think about what reward I should give you as a thank you. Do you like sweet things?[340]",//呵呵，就像是制作诱饵一样吗。$6#$b#但确实是个不错的思路，我想想作为答谢要给你什么奖励，你喜欢甜的东西吗？[340]
+    "event.102425.message.15":"Well, I need to go back and prepare. Goodbye, @.",//那么，我需要回去准备一下，再见，@。
+
+
+    //content.json-1214 event102426 事件3——待测试
+    "event.102426.message.1":"Ruan Mei, what are you doing here?",//阮·梅，你怎么在这里？
+    "event.102426.message.2":"@? I commissioned Mr. Ma Long to collect monster materials for me. #$b#Your face is stained with blood. Did you just come out of the mine? Did you get anything? (Wipe)$1",//@？我委托了马龙先生为我收集怪物素材。#$b#你脸上沾了血迹，刚从矿洞出来吗？有什么收获吗？（擦拭）$1
+    "event.102426.message.3":"...What's wrong?$9",//……怎么了？$9
+    "event.102426.message.4":"(Shakes head) I just remembered the monsters you kept at home. I thought you caught them all.",//（摇头）只是想起你养在家里的怪物们，我还以为那些都是你抓回来的呢，
+    "event.102426.message.5":"Unfortunately, I don't have that ability. $6",//很遗憾，我并没有那种能力。$6
+    "event.102426.message.6":"So... why not just use the ones at home for experiments?",//这样……为什么不干脆把家里的拿来做实验呢？
+    "event.102426.message.7":"Those little creatures kept at home naturally have other uses. $6#$b#If you encounter any interesting creatures in the mines, you can tell me about them and I will give you a “reward”. $2",//家里养的那些小生命自然有其他的用处。$6#$b#如果你在矿洞遇到了什么有趣的生物也可以讲给我听，我会给你“奖励”。$2
+    "event.102426.message.81":"We are friends. There is no need for any reward, okay?",//我们是朋友，不需要什么回报好吗？
+    "event.102426.message.82":"What reward? desser again?",//什么奖励？还是甜品吗？
+    "event.102426.message.9":"Dear, it's anything you want.#$b#Of course, I'd be happy if you like the desserts I made.",//亲爱的，是任何你想要的东西。#$b#当然，如果你喜欢我做的甜品我很开心。
+    "event.102426.message.10":"It's delicious.",//它很好吃。
+    "event.102426.message.11":"Then I'm looking forward to any good news you can bring me, @.$1",//那我很期待你能为我带来什么好消息，@。$1
+    //content.json-1215
+    "event.102426.message.12":"......*mutters.$2#$b#No matter what, hard work should be rewarded.",//……。*嘀咕。$2#$b#无论如何，努力应该得到回报。
+    "event.102426.message.13":"Work hard, @. $6",//努力工作吧，@。$6
+    "event.102426.message.14":"Well, bye.",//嗯，再见。
+
+    //content.json-1221 event102427 事件4-2——待测试
+    "event.102427_2.message.1":"......? $9#$b# Is this some kind of witty remark? Sorry, I don't quite understand this. $9#$b# But... (flicking hair) (kiss) Is this enough? @.",//……？$9#$b#这是什么俏皮话吗？抱歉我不太懂这些。$9#$b#但……(撩发）（亲)这样就可以了吗？@。
+    "event.102427_2.message.2":"……",//……
+    "event.102427_2.message.3":"You think you need to explain to your friends what the so-called “joke” means.",//你觉得你必须给你的朋友好好讲讲所谓“玩笑话”是什么意思了。
+
+
+    //content.json-1227 event102427 事件4-1——待测试
+    "event.102427_1.message.1":"Ruan Mei? (Waving)",//阮·梅？(挥手）
+    "event.102427_1.message.2":"...Shh. $6#$b#It's better not to talk to me now, @.",//……嘘。$6#$b#现在不和我说话比较好哦，@。
+    "event.102427_1.message.3":"...Sister, who were you talking to just now?$3",//……姐姐，你刚刚在和谁说话?$3
+    "event.102427_1.message.4":"There's no one there... There shouldn't be anyone, sister? (Shrink)$2",//那里没有人吧……应该没有人吧姐姐？（缩）$2
+    "event.102427_1.message.5":"I heard from Teacher Penny earlier that there seems to be a rumor about something floating in the air in the town recently...$2",//之前听潘妮老师说最近镇上好像有东西漂浮在空中的传闻……$2
+    "event.102427_1.message.6":"...Is there really something there?$3",//……真的有东西在那里吗？$3
+    "event.102427_1.message.7":"Then...bye, @.$6",//那……拜拜，@。$6
+    "event.102427_1.message.8":"You remember that you have never heard people in town talk about Ruan Mei, and you seem to understand something.",//你想起从来没听过镇上的人聊起阮·梅，你好像明白了些什么。
+    "event.102427_1.message.9":"Go ask her.",//去问问她吧。
+    "event.102427_1.message.10":"Ruan Mei...",//阮·梅……
+    "event.102427_1.message.11":"What's wrong? Oh... I think I know why you came here.",//怎么了？哦……我想我知道你为什么过来了。
+    "event.102427_1.message.12":"If you don't want me to tell others, just kiss me ww. (pointing)",//要是不想让我告诉其他人就亲我一下ww。（指）
+    "event.102427_1.message.13":"What did you do?",//你做了什么？
+    "event.102427_1.message.14":"Could it be that you are actually a ghost in the library?",//难不成你其实是图书馆的幽灵？
+    "event.102427_1.message.15":"It's actually very simple..., @. Do you remember when we first met? #$b#I added a... magic to myself. It allows me to disappear from other people's sight, which makes me feel at ease. #$b#But you've learned the language of those little creatures. Naturally, this magic has lost its effect.",//其实很简单……，@。你还记得我们初次相遇的时候吗？#$b#我给自己添加了一个……魔法。可以让我从其他人的视角里消失，这会让我很安心。#$b#但是你学会了那些小生命的语言。这个魔法自然也失效了。
+    "event.102427_1.message.16":"Then wouldn't it seem to outsiders that I'm talking to myself when I talk to you?",//那我和你说话的时候岂不是在外人看来是自言自语？
+    "event.102427_1.message.17":"Indeed. $6",//确实。$6
+    "event.102427_1.message.18":"But then, have you been here all this time without talking to anyone else?",//但这样的话，你在这里这么久都不和其他人说话吗？
+    "event.102427_1.message.19":"Oh, I can talk to the little creatures at home. Analyzing the language of other creatures is my pleasure. $1",//哦，我会和家里的小生命说话，分析其他生物的语言是我的乐趣。$1
+    "event.102427_1.message.20":"Well, you've long been accustomed to your friend being a strange scholar. At least she seems happy, that's enough.",//好吧，你早就习惯了你的朋友是个奇怪的学者，至少她看起来很开心就够了。
+    //"event.102427_1.message.1":"",//
+
+
+    //content.json-1239 event102428 事件5——施工中
+    "event.102428.message.1":"Phew...it's finally solved. (wipes sweat)",//呼……终于解决了。（擦汗）
+    "event.102428.message.2":"The monsters in Ruan Mei's house are too restless (picks up) Ah... there are so many materials, just right.",//阮·梅家里的怪物也太不安分了（捡）啊……有好多素材，正好。
+    "event.102428.message.3":"Ruan Mei will probably like it.",//阮·梅应该会喜欢。
+    "event.102428.message.4":"@? Why are you covered in blood? #$b#...Don't move, there's nothing wrong with your body. Is it the blood of another creature? $6",//@?你怎么浑身是血的？#$b#……不要动，身体没有问题，是其他生物的血吗？$6
+    "event.102428.message.5":"Ruan Mei is helping you wipe the blood off your face, but you see her clean white coat, which contrasts with the blood foam on your body.",//阮·梅正在帮你擦掉脸上的血迹，你却看到了她身上干净的白大褂，和你身上的血沫形成了对比。
+    "event.102428.message.6":"Okay, this makes you feel a little subtle.",//好吧，这让你产生了点微妙的情绪。
+    "event.102428.message.7":"So you decide to hug Ruan Mei and rub the blood on her.",//于是你决定抱住阮·梅，并把血迹蹭她身上。
+    "event.102428.message.8":"Finally, before Ruan Mei pushed you away, you took out the fresh materials that the monster had just dropped from your backpack.",//终于，你在阮·梅推开你前，先一步从背包拿出来了怪物刚掉落的新鲜素材。
+    "event.102428.message.9":"Here you go!",//送给你！
+    "event.102428.message.10":"Naturally, Ruan Mei's attention was diverted to the materials, and you were satisfied with soiling Ruan Mei's clothes.",//理所当然，阮·梅的注意力被你转移到了素材身上，而你也满意地弄脏了阮·梅的衣服。
+    "event.102428.message.11":"The blood on this bat wing hasn't coagulated yet. Could it be that @you used teleportation magic? $1",//这个蝠翼上的血液还没有凝固呢，难不成@你使用了传送魔法？$1
+    "event.102428.message.12":"Ruan Mei smiled and reached out to take the materials, not caring at all about the blood still dripping from them. ...It was even still warm.",//阮·梅笑着伸手接过素材，丝毫不在意上面还在滴落的血迹。……甚至还是热的。
+    "event.102428.message.13":"Haha, no wonder. @, your hunting skills have improved again. These are the ones I raised at home. $6",//呵呵，怪不得。@，你的狩猎技术又提高了，这是我家养的那些吧。$6
+    "event.102428.message.14":"I've been discovered!",//被发现了！
+    "event.102428.message.15":"After all, every time I come here, some of your little lives...break out of the fence and beat me up...every time. You try to act aggrieved.",//毕竟每次来这里都会有一些你的小生命……出围栏围殴我……，每一次都。你试着装出一副委屈的样子。
+    "event.102428.message.16":"Sorry,...actually, most of the time they are very well behaved.",//抱歉，……其实绝大多数时候它们很乖。
+    "event.102428.message.17":"And every time I clean them up, there is no decrease in their numbers the next day...in fact, there are even more species.",//而且每次清理完第二天完全没有减少……种类还变得更多了。
+    "event.102428.message.18":"I don't mean to blame you. These little lives are destroyed every day and then reborn again. So, you bring me their different appearances. $6",//我没有怪你的意思，这些小生命每天都会销毁，然后再次重生。所以你反而给我带来了它们不同的姿态。$6
+    "event.102428.message.19":"You are even more confused. There have been too many mysteries about Ruan Mei since the beginning.",//你更加困惑了，从最开始阮·梅身上就有太多的谜团。
+    "event.102428.message.20":"Ruan Mei, do you go to the mines to catch monsters every night?",//阮·梅，你是每天晚上去矿洞抓怪物了吗？
+    "event.102428.message.21":"Uh...how can I explain it? These little lives are not caught. I spent some time analyzing their genetic maps, just like unraveling a roll of embroidery thread. Then I used a little trickery to re-outline their sequences, gradually unraveling redundant knots, and embroidering new functional fragments...",//呃……我该怎么解释呢，这些小生命并不是被抓过来的。我花了点时间解析了它们的基因图谱，就像拆解一卷绣线，随即用了一点小手段重新勾勒了它们的序列、一点点挑开冗余的结，绣上新的功能片段…………
+    "event.102428.message.22":"...You can think of it as a monster spawner. $6",//……你可以理解为刷怪笼。$6
+    "event.102428.message.23":"You don't quite understand what Ruan Mei means, but you understand that this place can quickly make you a monster-killing hero!",//你不是很懂阮·梅的意思，但你明白了这里可以让你速成杀怪英雄！
+    "event.102428.message.24":"? ...Why are you suddenly happy again? *mutters.$9",//？……怎么又突然开心了？*嘀咕。$9
+    "event.102428.message.25":"You didn't notice Ruan Mei's confusion and hugged her again. Could it be that your friend really is a genius?",//你没有注意到阮·梅的困惑，又抱住了她，难不成你这位朋友真的是天才吗？
+    "event.102428.message.26":"Now the place that was just wiped clean is dirty again.",//这下好了，刚擦干净的地方又变脏了。
+    //"event.102428.message.1":"",//
+
+
+    "event.102429.message.1":"You think this scene is a little familiar.",//
+    "event.102429.message.2":"...Sure enough, I fell asleep in the forest again (poke).",//
+    "event.102429.message.3":"You lay beside Ruan Mei, gazing at the starry sky. The wind brushed past your ears, carrying the sound of Ruan Mei's gentle breathing.",//
+    "event.102429.message.4":"You slept soundly... I wasn't worried about danger in the forest...",//
+    "event.102429.message.5":"Although you quickly recalled her strange “magical abilities”, perhaps this place had been enchanted for a long time.",//
+    "event.102429.message.6":"...Perhaps it was the quiet air that had made you a little sleepy. ...Ruan Mei is here, so there shouldn't be any danger.",//
+    "event.102429.message.7":"Having drifted off, you felt a slight weight and warmth on your shoulder.",//
+    "event.102429.message.8":"...@? How did you get here?",//
+    "event.102429.message.9":"You also leaned over, whispering softly.",//
+    "event.102429.message.10":"I saw you here just as I was passing by, but after lying there for a while I got sleepy myself...",//
+    "event.102429.message.11":"You seemed to hear Ruan Mei laugh twice.",//
+    "event.102429.message.12":"Before, you always thought the forest was too quiet at night, but now it feels too... noisy here, making it difficult for you to hear Ruan Mei's voice clearly.",//
+    "event.102429.message.13":"There's a sense of security in the forest... The sounds and smells of life flow clearly through your senses... It's like being back to the very beginning of life. #$b#And now you're here too. $6",//
+    "event.102429.message.14":"...You're a little unsure how to respond, maybe just hold Ruan Mei's hand.",//
+    "event.102429.message.15":"The forest seems to have become a little too quiet again.",//
+    "event.102429.message.16":"After a long period of silence, you hear Ruan Mei's voice again amid the faint chirping of insects and the sound of wind.",//
+    "event.102429.message.17":"Can I...#$b#Can I trust you? @. $2",//
+
+
+
+    //电影
+    "movie.spring_movie_0.1":"The sapling grows into a tree throughout its growth... Kind of interesting. #$b#...? Isn't this the kind of growth I was thinking of?",//小树苗通过冒险成长为一棵树……有点意思。#$b#……？不会是我想的那种成长？
+    "movie.spring_movie_0.2":"So that's how it is...",//原来是这样……
+    "movie.spring_movie_0.3":"Ruan Mei is focused on the movie.",//阮·梅专心于看电影。
+    "movie.spring_movie_0.4":"It's quite interesting to interpret growth from another perspective.",//从另一种角度来诠释成长，还是蛮有意思的。
+
+
+    "movie.summer_movie_0.1":"A movie adapted from a video game... I don't play games very often, but if it were Stephen, he might be interested. #$b# But it wouldn't be dull alongside you.",//游戏改编电影……我不常玩游戏，如果是斯蒂芬可能会感兴趣。#$b#不过和你一起应该也不坏。
+    "movie.summer_movie_0.2":"Ruan Mei looked very sleepy and dozed off, leaning on your shoulder.",//阮·梅看上去很困，倚在你肩膀上睡着了。
+    "movie.summer_movie_0.3":"The atmosphere in the cinema was surprisingly soothing...",//电影院的氛围意外地让人安心……
+
+
+    "movie.fall_movie_0.1":"Mysterious deeds? The truth of midnight? Let's watch this, shall we?",//神秘事迹？午夜的真相？我们看这个好不好
+    "movie.fall_movie_0.2":"Ruan Mei watched with great interest.",//阮·梅看得津津有味。
+    "movie.fall_movie_0.3":"Interesting... maybe it's based on that news story? I've talked about this with Herta before.",//有点意思呢……应该是之前那个新闻事件改编吧？之前和黑塔聊过这个。
+    "movie.fall_movie_0.4":"Are you expecting me to be scared? I've seen far scarier things than this.",//你在指望我被吓到吗？实际上我见过的东西可比这可怕多了。
+    "movie.fall_movie_0.5":"Oh, you're afraid, so are you going to hold my hand on the way back?",//呃、你被吓到了啊，那回去的路上要握着我的手吗？
+
+
+    "movie.winter_movie_0.1":"Home movies...hmm.",//家庭电影……嗯。
+    "movie.winter_movie_0.2":"Ruanmei stared at the screen silently, as if recalling something.",//阮·梅沉默地看着屏幕，像是在回忆什么。
+    "movie.winter_movie_0.3":"...",//……
+    "movie.winter_movie_0.4":"...I'm hungry.",//……饿了。
+
+
+    "movie.spring_movie_1.1":"I like this, ... life, there is life in the world no matter what.",//我喜欢这个，……生命，无论如何世界上都拥有着生命。
+    "movie.spring_movie_1.2":"Ruan Mei wore her glasses and looked very interested.",//阮·梅戴着眼镜，看起来津津有味。
+    "movie.spring_movie_1.3":"I've actually been to all of these places before. But no matter how many times I go, they still captivate me.",//其实我之前都去过这些地方。但无论重复多少次，都依旧摄人心魂。
+    "movie.spring_movie_1.4":"I want to go and investigate again.",//都想再去实地考察一下了。
+
+
+    "movie.summer_movie_1.1":"This alien creature looks like a green slime.",//这种外星生物看起来像绿色史莱姆。
+    "movie.summer_movie_1.2":"Hmm? Maybe I can change the slime's appearance when I get home.",//嗯？或许可以回家后更改一下史莱姆的样子。
+    "movie.summer_movie_1.3":"Ruanmei seemed lost in her own thoughts.",//阮·梅似乎沉浸在自己的思绪里。
+    "movie.summer_movie_1.4":"The elasticity of a slime...and its transparency...hmm?",//粘液的延展性……还有透明度……嗯？
+    "movie.summer_movie_1.5":"I have an idea. Do you need to keep a Wumbus at home? Oh... no?",//我有想法了，你需要在家里养一个温布斯吗？哦……不需要吗？
+
+
+    "movie.fall_movie_1.1":"It Howls in the Rain...? What kind of movie is this?",//雨中嚎叫……？这是什么类型的电影？
+    "movie.fall_movie_1.2":"Ruan Mei appears to be enthrailled.",//阮·梅看起来很期待。
+    "movie.fall_movie_1.3":"Such bizarre tales... Excellent.",//怪谈……真不错。
+    "movie.fall_movie_1.4":"The design in the rain is quite interesting. The author should have referred to some *muttering, hehe... The fantasy places are particularly interesting.",//雨中的设计还是挺有意思的，作者应该参考了些*嘀咕，呵呵……幻想的地方尤为有趣。
+
+
+    "movie.winter_movie_1.1":"I don't actually watch movies that often, but it's nice to watch one every now and then.",//其实我没怎么看过电影，不过偶尔看看也不错。
+    "movie.winter_movie_1.2":"Ruan Mei is preoccupied with her snacks.",//阮·梅专注于吃小吃。
+    "movie.winter_movie_1.3":"Do you want some?",//你要吃吗？
+    "movie.winter_movie_1.4":"The snacks at the cinema are now sweeter. I really want to ask the cook how they made them.",//电影院的零食味道更加甜蜜了，真想问问配方师是怎么做的。
+
+
+    "SummitEvent_Dialogue3_Ruanmei.1":", I'm so glad... that I believed in you.",//，我很高兴……我相信了你。
+    "SummitEvent_Dialogue3_Ruanmei.2":"...If I hadn't lived through it myself, I'd find it hard to imagine spending so much of my life with someone. Even now, it feels a little miraculous.",//……如果不是亲身经历，我应该很难想象会和某个人生活在一起那么久，直到现在也觉得很奇妙。
+    "SummitEvent_Dialogue3_Ruanmei.3":"I used to think that if I never touched feelings, I'd never experience betrayal or disappointment. That's why I'm truly happy to have met you... and to have chosen to trust again.",//我曾经觉得只要不去触碰感情，就不会经历背叛与失望，所以我真的很高兴能遇到你……能选择再次相信你。
+    "SummitEvent_Dialogue3_Ruanmei.4":"...Really.",//……真的。
+
+    "letter.mail.Ruanmei_qiubang.1":":",//：
+    "letter.mail.Ruanmei_qiubang.2":"Thank you for bringing me what I needed. Please accept this gift.",//感谢你为我带来了我需要的东西，这个送给你。
+    "letter.mail.Ruanmei_qiubang.3":"——Ruan Mei",//——阮·梅
+    "letter.mail.Ruanmei_qiubang.4":"Reward from Ruan Mei",//阮·梅的奖励
+    "letter.mail.Ruanmei_Thalantoxiflame_recipe.1":"My dear:",//亲爱的：
+    "letter.mail.Ruanmei_Thalantoxiflame_recipe.2":"Qingtu once shared her recipe with me. Perhaps this drink will aid you in the mines.",//清涂给过我她作品的配方，或许这杯调饮能在矿洞中帮到你。
+    "letter.mail.Ruanmei_Thalantoxiflame_recipe.3":"P.S: Remember to bring extra food when you drink this.",//备注：饮用时请多带些食物。
+    "letter.mail.Ruanmei_recipe.1":"——Ruan Mei",//——阮·梅
+    "letter.mail.Ruanmei_recipe.2":"A Gift from Ruan Mei",//阮·梅的赠礼
+    "letter.mail.Ruanmei_Thepinkestcollision_recipe.1":":",//：
+    "letter.mail.Ruanmei_Thepinkestcollision_recipe.2":"My friend once gave me this drink as a farewell gift.",//我的友人曾经将这杯调饮当做临别的赠礼。
+    "letter.mail.Ruanmei_RuanmeiCakeMail.1":"This little thing might be of some help to you."//这个小玩意或许对你有所帮助。
+    
+    
+
+    // "quest.10242233.title": "收集蝙蝠翅膀",//收集蝙蝠翅膀
+    // "quest.10242233.description": "阮·梅需要一些蝙蝠翅膀,不需要问原因。她会给你300G作为奖励。",//阮·梅需要一些蝙蝠翅膀,不需要问原因。她会给你300G作为奖励。
+    // "quest.10242233.objective": "递交给阮·梅十个蝙蝠翅膀",//递交给阮·梅十个蝙蝠翅膀
+   
+}

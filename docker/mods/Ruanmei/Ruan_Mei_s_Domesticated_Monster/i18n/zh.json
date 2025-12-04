@@ -1,0 +1,24 @@
+{
+  // Boss血条系统-未实装，仅暂留接口，可无视
+  "boss.health-bar.title": "{0} 生命值",
+  "boss.health-bar.health": "{0} / {1}",
+  "boss.health-bar.percentage": "{0}%",
+
+  // 商店系统
+  "shop.purchase.miniruanmei": "请慎重对待拉姆之友",
+  "shop.purchase.portrait": "请慎重对待阮·梅肖像",
+
+  // 血量监控系统
+  "health.low.warning": "这里还不合适你，亲爱的",
+  "health.low.healed": "阮·梅女士为你进行了应急治疗",
+  "health.curse.multiplayer": "阮·梅造物诅咒了你们",
+  "health.curse.singleplayer": "阮·梅造物们诅咒了你",
+
+  // 通用消息
+  "global.wurenzhidi-warning": "就此离开,没有人会受伤！ \n 、(*皿* )",
+
+  //余清涂毒酒系统
+  "YuQingTu.FHpinkCollisionEffect": "你感受到了.....奇妙的幻觉？",
+  "YuQingTu.TLDEffect": "你感觉到自己充满了力量\n....但是，有什么不对劲？!"
+
+}
