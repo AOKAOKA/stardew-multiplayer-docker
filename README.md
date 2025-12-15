@@ -2,15 +2,13 @@
 
 这个项目旨在用最简单的方式自动启动一个 Stardew Valley（星露谷物语）多人联机服务器。
 
-配置步骤与原仓库有些区别，可以参考[使用Docker搭建星露谷最新服务端（Steam下载版）](https://insectmk.cn/posts/b01f80ee/)。
-
 ## 重要说明
 
-此仓库基于[cavazos-apps/stardew-multiplayer-docker](https://github.com/cavazos-apps/stardew-multiplayer-docker)优化改造。
+此仓库基于[insectmk/stardew-multiplayer-docker](https://github.com/insectmk/stardew-multiplayer-docker)优化改造。
 
 ## 设置指南
 
-此仓库目前只维护Steam版本，GOG版本可以查看原仓库->[cavazos-apps/stardew-multiplayer-docker](https://github.com/cavazos-apps/stardew-multiplayer-docker)。
+此仓库目前只用于个人记录更改使用！
 
 在开始之前默认服务器存在`docker`、`docker-compose`环境。
 
@@ -21,8 +19,6 @@
 ```bash
 # 使用Github源仓库
 git clone https://github.com/insectmk/stardew-multiplayer-docker.git
-# 使用Gitee镜像仓库（网络不好使用）
-git clone https://gitee.com/insectmk/stardew-multiplayer-docker.git
 ```
 
 ### Steam登录配置
@@ -44,15 +40,15 @@ STEAM_GUARD=<最新的Steam令牌验证码> # 如果你的账户没有启用Stea
 
 由于原仓库构建镜像时，SMAPI在构建镜像的时候从Github下载的，拖慢了构建镜像的速度，现在改成了可预先下载，使用本地SMAPI构建。
 
-到[SMAPI-Releases页面](https://github.com/Pathoschild/SMAPI/releases)下载你需要的插件平台版本，如：`SMAPI-4.1.10-installer.zip`，并放入到`docker/smapi`文件夹（需要新建）中。
+到[SMAPI-Releases页面](https://github.com/Pathoschild/SMAPI/releases)下载你需要的插件平台版本，如：`SMAPI-4.3.2-installer.zip`，并放入到`docker/smapi`文件夹（需要新建）中。
 
-（PS：之前在某个文章的评论区看到，[Always On Server模组](https://www.nexusmods.com/stardewvalley/mods/2677)，在每日结算的时候没有自动确认，导致其他玩家一直在等待，需要手动点击服主机器人的OK，解决方案是将SMAPI降级到`4.1.7`以前的版本，这里使用的本项目原作者的版本->[4.1.10](https://github.com/Pathoschild/SMAPI/releases/tag/4.1.10)，经测试一样有效。）
+（PS：之前在某个文章的评论区看到，[ALOS模组](https://www.nexusmods.com/stardewvalley/mods/2677)，在每日结算的时候没有自动确认，导致其他玩家一直在等待，需要手动点击服主机器人的OK，解决方案是将SMAPI降级到`4.1.7`以前的版本，这里使用的本项目原作者的版本->[4.1.10](https://github.com/Pathoschild/SMAPI/releases/tag/4.1.10)，经测试一样有效。）
 
 放入后，修改`docker/Dockerfile-steam`文件：
 
 ```dockerfile
 # 修改这行，将SMAPI-4.1.10-installer.zip改为你对应的SMAPI Installer包
-COPY smapi/SMAPI-4.1.10-installer.zip /data/nexus.zip
+COPY smapi/SMAPI-4.3.2-installer.zip /data/nexus.zip
 ```
 
 ### VNC密码
