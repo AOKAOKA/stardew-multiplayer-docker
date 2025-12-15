@@ -18,7 +18,7 @@
 
 ```bash
 # 使用Github源仓库
-git clone https://github.com/insectmk/stardew-multiplayer-docker.git
+git clone https://github.com/AOKAOKA/stardew-multiplayer-docker.git
 ```
 
 ### Steam登录配置
