@@ -47,7 +47,7 @@ STEAM_GUARD=<最新的Steam令牌验证码> # 如果你的账户没有启用Stea
 放入后，修改`docker/Dockerfile-steam`文件：
 
 ```dockerfile
-# 修改这行，将SMAPI-4.1.10-installer.zip改为你对应的SMAPI Installer包
+# 修改这行，将SMAPI-4.3.2-installer.zip改为你对应的SMAPI Installer包
 COPY smapi/SMAPI-4.3.2-installer.zip /data/nexus.zip
 ```
 
@@ -71,7 +71,7 @@ services:
 sudo docker compose -f docker-compose-steam.yml up
 ```
 
-- 编排会先创建镜像（下载各种环境以及游戏本体），请耐心等待，我的服务器构建花费了40分钟左右。
+- 编排会先创建镜像（下载各种环境以及游戏本体），请耐心等待。
 - 如果到Steam下载游戏时，令牌验证码已经失效，更新`.env`中的`STEAM_GUARD`为最新验证码后，重新使用上面的指令创建编排。
 
 ### 开服
